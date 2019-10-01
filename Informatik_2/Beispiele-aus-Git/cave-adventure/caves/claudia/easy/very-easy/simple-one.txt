@@ -1,0 +1,8 @@
+CAVE
+5 5
+Sehr einfache Hoehle ohne Gefahren
+XXXXX
+XEXAX
+XGGGX
+XHHHX
+XXXXX

@@ -1,0 +1,11 @@
+CAVE
+7 7
+Eine sehr regelmaessige Hoehle...
+GXXAXXG
+XXXHXXX
+XXKKKXX
+GHKEKHG
+XXKKKXX
+XXXHXXX
+GXXGXXG
+

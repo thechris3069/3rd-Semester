@@ -1,0 +1,8 @@
+CAVE
+4 6
+Beginne mit einer ganz einfachen Hoehle!
+XHXGXA
+EXGGXX
+XKKXXX
+XKXGHX
+
