@@ -1,26 +1,33 @@
 import csv
-import numpy as np 
+import math
+from collections import Counter
+
+import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
-from collections import Counter
-import math
-l = 1.1185557208532343e-05
-print(l)
-i = 1
-k = 0
-while i < 300:
-    k = k + 1/(i*i)
-    i = i+1
-print(k)
 
-knew = 0
-while i >0:
-    knew = knew +1/(i*i)
-    i = i-1
-print(knew)
+#Fehler bei Berechnung in Falscher Reihenfolge Darstellen
+# l = 1.1185557208532343e-05
+# print(l)
+# i = 1
+# k = 0
+# while i < 300:
+#     k = k + 1/(i*i)
+#     i = i+1
+# print(k)
+
+# knew = 0
+# while i >0:
+#     knew = knew +1/(i*i)
+#     i = i-1
+# print(knew)
+
 
 xi = [1,2,3,4]
 yi = [6,6.8,10,10.5]
+plt.plot(xi, yi)
+plt.show()
+
 element = 0
 matrix = [[0,0],[0,len(xi)]]
 result = [0,0]
