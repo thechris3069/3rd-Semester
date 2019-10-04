@@ -122,6 +122,7 @@ int saveAsPpm(uint8_t bilddaten[], int b, int h)
 
 int main()
 {
+
     // Bild aus 2 Zeilen und 3 Spalten
     uint8_t bild[2*3*3] = { 255, 0, 0,    0, 255, 0,   0, 0, 255,
                             255, 255, 0,  0, 255, 255, 255, 255, 255};
