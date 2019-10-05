@@ -50,8 +50,10 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Wuefel/main.cpp 
-OBJECTS       = main.o
+SOURCES       = ../Wuefel/main.cpp \
+		../Wuefel/wuerfel.cpp 
+OBJECTS       = main.o \
+		wuerfel.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -120,7 +122,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../Wuefel/Wuefel.pro  ../Wuefel/main.cpp
+		../Wuefel/Wuefel.pro wuerfel.h ../Wuefel/main.cpp \
+		../Wuefel/wuerfel.cpp
 QMAKE_TARGET  = Wuefel
 DESTDIR       = 
 TARGET        = Wuefel
@@ -315,6 +318,9 @@ compiler_clean:
 
 main.o: ../Wuefel/main.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Wuefel/main.cpp
+
+wuerfel.o: ../Wuefel/wuerfel.cpp ../Wuefel/wuerfel.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o wuerfel.o ../Wuefel/wuerfel.cpp
 
 ####### Install
 

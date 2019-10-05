@@ -2,45 +2,26 @@
 #include <cstdlib>
 #include <ctime>
 
+#include "wuerfel.h"
+
 using namespace std;
-
-class Wuerfel {
-private:
-    std::string w_Farbe;
-    unsigned int maxZahl;
-    unsigned int aktZahl;
-
-public:
-      Wuerfel(std::string farbe = "lila", unsigned  int max = 6);
-     ~Wuerfel();
-     void wuerfeln();
-     unsigned int anzeigen();
-     unsigned int getZahl()
-     {
-         return aktZahl;
-     }
-
-};
-
-Wuerfel::Wuerfel(std::string farbe,unsigned int max)
-//    :w_Farbe(farbe), maxZahl(max)
-{
-    w_Farbe = farbe;
-    maxZahl = max;
-
-}
-
-Wuerfel::~Wuerfel()
-{
-    cout << "Destruktor aufgerufen" << endl;
-}
 
 int main()
 {
+    srand(time(0));
     string var = "rot";
     Wuerfel w1(var, 10);
-//    Wuerfel w2();
-    srand(time(0));
+    w1.anzeigen();
+    w1.wuerfeln();
+    w1.anzeigen();
+    Wuerfel w2("gelb");
+//    Wuerfel w3(500);
+    Wuerfel w3;
+    w3.anzeigen();
+    w2.anzeigen();
+//    w2.wuerfeln();
+//    w2.anzeigen();
+
 
     cout << "Hello World!" << endl;
     return 0;
