@@ -1,3 +1,4 @@
+
 /*
  * Codebeispiel zum Abspeichern von Bildern aus RGB-Daten als BMP-/PPM-Datei.
  *
@@ -27,6 +28,9 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+
+#include "background.h"
+
 using namespace std;
 
 /* Funktion, die RGB-Daten eines Bildes der Breite b und Hoehe h, die
@@ -122,11 +126,14 @@ int saveAsPpm(uint8_t bilddaten[], int b, int h)
 
 int main()
 {
+    Background pictureOne();
+    saveAsBmp(pictureOne.getarray(), pictureOne.getSize_x(), pictureOne.getSize_y());
+    saveAsPpm(pictureOne.getarray(), pictureOne.getSize_x(), pictureOne.getSize_y());
 
-    // Bild aus 2 Zeilen und 3 Spalten
-    uint8_t bild[2*3*3] = { 255, 0, 0,    0, 255, 0,   0, 0, 255,
-                            255, 255, 0,  0, 255, 255, 255, 255, 255};
-    saveAsBmp(bild, 3, 2);
-    saveAsPpm(bild, 3, 2);
+    std::cout << "Hello World" <<std::endl;
     return 0;
 }
+
+//Wann ist der this-> Pointer nötig, ich kann ja in der Klasse immer auf den this Zeiger verzichten? Nur bei Scope, ... mehrfacher Belegung von Variablen?
+// Wie declare ich die Array Länge, wenn ich die Größe übergeben möchte?
+
