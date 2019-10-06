@@ -9,7 +9,7 @@ Background::Background(std::string color = "blue")
 }
 
 Background::Background()
-    :b_color("blue"), size_x(200), size_y(300), arraylength(200 * 300 *3)
+    :b_color("blue"), size_x(200), size_y(300), arraylength(size_x*size_y*3)
 {
     setcolor();
 }

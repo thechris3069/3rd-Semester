@@ -1,7 +1,5 @@
 #include "wuerfel.h"
 
-//#include <iostream>   //INCLUDES IN DIE HEADER, ODER IN DIE CPP DATEI
-
 using namespace std;
 
 

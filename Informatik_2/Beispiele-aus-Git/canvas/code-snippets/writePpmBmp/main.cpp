@@ -126,7 +126,7 @@ int saveAsPpm(uint8_t bilddaten[], int b, int h)
 
 int main()
 {
-    Background pictureOne();
+    Background pictureOne("yellow");
     saveAsBmp(pictureOne.getarray(), pictureOne.getSize_x(), pictureOne.getSize_y());
     saveAsPpm(pictureOne.getarray(), pictureOne.getSize_x(), pictureOne.getSize_y());
 
@@ -135,5 +135,7 @@ int main()
 }
 
 //Wann ist der this-> Pointer nötig, ich kann ja in der Klasse immer auf den this Zeiger verzichten? Nur bei Scope, ... mehrfacher Belegung von Variablen?
-// Wie declare ich die Array Länge, wenn ich die Größe übergeben möchte?
-
+// Wie deklariere ich die Array Länge, wenn ich die Größe des Hintergrunds übergeben übergeben möchte?
+//Wenn ich nichts übergebe, bekomme ich einen Fehler, verstehe aber nicht wieso, ich habe ja einen Standard Konstruktor, sowie einen spezifischen Konstruktor, wieso wird kein Objekt erstellt?
+//Wo kommt ein namespace hin, in die Header, oder in die .cpp file
+// Inline Programmierung im Header? - also Definition in einer Header File?

@@ -10,9 +10,9 @@ class Background
 private:
 
     string b_color;
-    unsigned int arraylength;
     unsigned int size_x;
     unsigned int size_y;
+    unsigned int arraylength;
 
 
     uint8_t r;
@@ -28,6 +28,8 @@ public:
 
     Background(std::string color);
     Background();
+    ~Background();
+
     uint8_t * getarray()
     {
         return this->pixelval;
@@ -40,7 +42,7 @@ public:
     {
         return this->size_y;
     }
-    ~Background();
+
 
 };
 
