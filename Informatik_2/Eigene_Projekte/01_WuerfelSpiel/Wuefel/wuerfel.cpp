@@ -16,10 +16,10 @@ void Wuerfel::wuerfeln()
     aktZahl = rand() % maxZahl +1;
 }
 
-//unsigned int Wuerfel::getZahl()
-//{
-//    return aktZahl;
-//}
+unsigned int Wuerfel::getZahl()
+{
+    return aktZahl;
+}
 
 void Wuerfel::anzeigen()
 {
