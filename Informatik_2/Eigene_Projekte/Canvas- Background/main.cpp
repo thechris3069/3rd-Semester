@@ -126,7 +126,7 @@ int saveAsPpm(uint8_t bilddaten[], int b, int h)
 
 int main()
 {
-    Background pictureOne("yellow");
+    Background pictureOne("blue");
     saveAsBmp(pictureOne.getarray(), pictureOne.getSize_x(), pictureOne.getSize_y());
     saveAsPpm(pictureOne.getarray(), pictureOne.getSize_x(), pictureOne.getSize_y());
 
