@@ -34,6 +34,7 @@
 using namespace std;
 
 // CM: Sie könnten die Funktionen auch als Methoden in die Klasse integrieren (siehe https://git.etech.fh-augsburg.de/claudia.meitinger/informatik2/tree/master/canvas). Dann wäre die Funktionalität nch etwas schöner gekapselt und der "save"-Aufruf im Hauptprogramm noch einfacher für den Benutzer.
+// CS: Was ein ein Save-Aufruf?
 /* Funktion, die RGB-Daten eines Bildes der Breite b und Hoehe h, die
  * in einem eindimensionalen Feld bilddaten der Groesse b*h*3 hinterlegt sind (siehe oben),
  * im BMP-Format als Datei test.bmp abspeichert
@@ -148,3 +149,4 @@ int main()
 // CM: Das using kommt typischerweise in die cpp-Datei, ein neuer eigener Namespace in den Header -> sage ich in der Vorlesung noch was dazu.
 // Inline Programmierung im Header? - also Definition in einer Header File?
 // CM: Nach Möglichkeit vermeiden, nur für ganz ganz kurze Methoden.
+// CS: Ja genau, wegen der potentiellen mehrfach-Inkludierung? Wieso geht es dann mit kurzen, jedoch nicht mit langen Funktionen

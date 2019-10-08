@@ -30,10 +30,12 @@ public:
 
 
     Background(std::string color); // CM: Das "std::" ist nur nötig, wenn kein "using namespace std;" oben steht. Da das eher in die cpp soll, bitte lassen :-)
+                                   // CS: Was soll ich lassen? Die Farbe wird als String übergeben?
     Background();
     ~Background();
 
     uint8_t * getarray() // CM: unnötig, wenn save-Methdoen in der Klasse sind. So öffnen Sie durch Rückgabe der Startadresse des Feldes unkontrolliert den Zugriff auf den Bildinhalt.
+                         // CS: Angenommen die Funktion ist nicht teil der Klasse, sondern aus einer anderen Library, dann eine Kopie des Feldes Übergeben? Wie Übergebe ich ein Feld als Kopie?
     {
         return this->pixelval;
     }
@@ -45,6 +47,7 @@ public:
     {
         return this->size_y;
     }
+     // CS: Übergabe ist call by pointer, call by value wäre dann?? oder als static übergeben, also read only? oder ist es const??
 
 
 };
