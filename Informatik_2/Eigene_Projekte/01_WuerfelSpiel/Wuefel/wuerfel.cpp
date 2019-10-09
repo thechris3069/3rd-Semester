@@ -16,7 +16,7 @@ void Wuerfel::wuerfeln()
     aktZahl = rand() % maxZahl +1;
 }
 
-unsigned int Wuerfel::getZahl()
+unsigned int Wuerfel::getZahl(int *)
 {
     return aktZahl;
 }

@@ -15,12 +15,12 @@ int main()
     w1.wuerfeln();
     w1.anzeigen();
     Wuerfel w2("gelb");
-    Wuerfel w3(500);
-    Wuerfel w3;
+//    Wuerfel w4(500); Findet keinen passenden Konstruktor
+    Wuerfel w3; // allgemeiner Konstruktor wird aufgerufen
     w3.anzeigen();
     w2.anzeigen();
-    w2.wuerfeln();
-    w2.anzeigen();
+    w3.wuerfeln();
+    w3.anzeigen();
 
 
     cout << "Hello World!" << endl;

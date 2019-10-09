@@ -150,3 +150,5 @@ int main()
 // Inline Programmierung im Header? - also Definition in einer Header File?
 // CM: Nach Möglichkeit vermeiden, nur für ganz ganz kurze Methoden.
 // CS: Ja genau, wegen der potentiellen mehrfach-Inkludierung? Wieso geht es dann mit kurzen, jedoch nicht mit langen Funktionen
+
+// Wann braucht man keinen Konstruktor?
