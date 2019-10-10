@@ -14,8 +14,10 @@
 using namespace std;
 
 Wuerfel::Wuerfel(string farbe, int maxAugen)
-    : m_farbe(farbe), m_maxAugen(maxAugen)
+//    : m_farbe(farbe), m_maxAugen(maxAugen)
 {
+    m_farbe = farbe;
+    m_maxAugen = maxAugen;
     // Sicherstellen, dass max. Augenzahl >= 1 ist
     if(m_maxAugen <= 0)
         m_maxAugen = 1;

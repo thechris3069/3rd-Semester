@@ -34,7 +34,7 @@
 using namespace std;
 
 // CM: Sie könnten die Funktionen auch als Methoden in die Klasse integrieren (siehe https://git.etech.fh-augsburg.de/claudia.meitinger/informatik2/tree/master/canvas). Dann wäre die Funktionalität nch etwas schöner gekapselt und der "save"-Aufruf im Hauptprogramm noch einfacher für den Benutzer.
-// CS: Was ein ein Save-Aufruf?
+// CS: Was ist ein Save-Aufruf?
 /* Funktion, die RGB-Daten eines Bildes der Breite b und Hoehe h, die
  * in einem eindimensionalen Feld bilddaten der Groesse b*h*3 hinterlegt sind (siehe oben),
  * im BMP-Format als Datei test.bmp abspeichert

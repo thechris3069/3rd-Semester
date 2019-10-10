@@ -19,11 +19,11 @@ using namespace std;
 
 #include "wuerfel.h"
 
-#define ANZAHL_WUERFEL 3
+#define ANZAHL_WUERFEL 4
 
 int main()
 {
-    Wuerfel w[ANZAHL_WUERFEL] { { "gruen", 20 }, { "gelb" }, { "rot", 10 } };
+    Wuerfel w[ANZAHL_WUERFEL] { { "gruen", 20 }, { "gelb" }, { "lila", 10 }, {} };
 
     // Pseudo-Zufallszahlengenerator initialisieren
     srand(time(0));
