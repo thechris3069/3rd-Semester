@@ -4,9 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    player.cpp \
-    Location.cpp
+    wuefel.cpp
 
 HEADERS += \
-    player.h \
-    location.h
+    wuefel.h
