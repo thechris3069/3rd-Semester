@@ -59,25 +59,25 @@ plt.axes = True
 # plt.show()
 
 
-plt.title('I/U - Diagramm')
-plt.xlim(0, 100)
-plt.ylim(0, 0.5)
-plt.xlabel('Spannung in mV')
-plt.ylabel('Stromstärke in mA')
+# plt.title('I/U - Diagramm')
+# plt.xlim(0, 100)
+# plt.ylim(0, 0.5)
+# plt.xlabel('Spannung in mV')
+# plt.ylabel('Stromstärke in mA')
 
-plt.plot(x, y_gerade, markersize = 3, color = 'red', linestyle = 'dashed', linewidth = 1 ) 
+# plt.plot(x, y_gerade, markersize = 3, color = 'red', linestyle = 'dashed', linewidth = 1 ) 
 
-plt.plot(Spannung, Strom, 'o',markersize = 6,  color = 'black', linestyle = 'dashed', linewidth = 0 ) 
-plt.savefig('U-I-Diagramm.jpg')
-plt.show()
-
-
-# plt.xlim(0, 1100)
-# plt.ylim(0, 15)
-# plt.title('P/R - Kennlinie')
-# plt.xlabel('Widerstand in Ω')
-# plt.ylabel('Leistung in W')
-# plt.plot(Widerstand, Leistung, 'o',markersize = 5,  color = 'blue', linestyle = 'dashed', linewidth = 0 ) 
-# plt.savefig('Leistung.jpg')
+# plt.plot(Spannung, Strom, 'o',markersize = 6,  color = 'black', linestyle = 'dashed', linewidth = 0 ) 
+# plt.savefig('U-I-Diagramm.jpg')
 # plt.show()
+
+
+plt.xlim(0, 1100)
+plt.ylim(0, 15)
+plt.title('P/R - Kennlinie')
+plt.xlabel('Widerstand in Ω')
+plt.ylabel('Leistung in μW')
+plt.plot(Widerstand, Leistung, 'o',markersize = 5,  color = 'blue', linestyle = 'dashed', linewidth = 0 ) 
+plt.savefig('Leistung.jpg')
+plt.show()
 
