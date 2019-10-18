@@ -46,9 +46,9 @@ det_b = result[1]*matrix[0][0] - matrix[1][0]*result[0]
 a = det_a/det
 b = det_b/det
 x = np.arange(24, 93, 1)
-# print("Median ascent:{:0.2f} + {:0.2f} x ".format(a,b))
-# print("Median ascent: y = ",a, "*x+",b )
-# plt.title("Median ascent:{:0.2f} + {:0.2f} x ".format(a,b))
+print("Median ascent:{:0.2f} + {:0.2f} x ".format(a,b))
+print("Median ascent: y = ",a, "*x+",b )
+plt.title("Median ascent:{:0.2f} + {:0.2f} x ".format(a,b))
 
 y_gerade = a*x+b
 # plt.plot(x,y_gerade)
