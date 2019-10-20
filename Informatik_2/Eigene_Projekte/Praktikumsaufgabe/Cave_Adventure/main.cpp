@@ -2,7 +2,7 @@
 
 #include "player.h"
 
-#define SPIELFELD 200
+#define SPIELFELD 10
 
 using namespace std;
 
@@ -15,8 +15,10 @@ int main()
     cout <<  "Auf dem Weg begegnen ihnen Monster und Händer, Gold und Fallen, viel Glück" << endl;
 
     Player player1(SPIELFELD);
-    player1.ausgabe();
-
+    while (player1.nextmove())
+    {
+    player1.nextmove();
+}
 
     cout << "Hello World!" << endl;
     return 0;
