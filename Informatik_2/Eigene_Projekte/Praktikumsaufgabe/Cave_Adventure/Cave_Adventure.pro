@@ -5,8 +5,10 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     player.cpp \
-    Location.cpp
+    Location.cpp \
+    caveadventure.cpp
 
 HEADERS += \
     player.h \
-    location.h
+    location.h \
+    caveadventure.h

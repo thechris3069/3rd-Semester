@@ -52,10 +52,12 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../Cave_Adventure/main.cpp \
 		../Cave_Adventure/player.cpp \
-		../Cave_Adventure/Location.cpp 
+		../Cave_Adventure/Location.cpp \
+		../Cave_Adventure/caveadventure.cpp 
 OBJECTS       = main.o \
 		player.o \
-		Location.o
+		Location.o \
+		caveadventure.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -125,9 +127,11 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../Cave_Adventure/Cave_Adventure.pro player.h \
-		location.h ../Cave_Adventure/main.cpp \
+		location.h \
+		caveadventure.h ../Cave_Adventure/main.cpp \
 		../Cave_Adventure/player.cpp \
-		../Cave_Adventure/Location.cpp
+		../Cave_Adventure/Location.cpp \
+		../Cave_Adventure/caveadventure.cpp
 QMAKE_TARGET  = Cave_Adventure
 DESTDIR       = 
 TARGET        = Cave_Adventure
@@ -329,6 +333,9 @@ player.o: ../Cave_Adventure/player.cpp ../Cave_Adventure/player.h
 
 Location.o: ../Cave_Adventure/Location.cpp ../Cave_Adventure/location.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Location.o ../Cave_Adventure/Location.cpp
+
+caveadventure.o: ../Cave_Adventure/caveadventure.cpp ../Cave_Adventure/caveadventure.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o caveadventure.o ../Cave_Adventure/caveadventure.cpp
 
 ####### Install
 

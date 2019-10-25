@@ -3,20 +3,26 @@
 using namespace  std;
 
 
-struct Position{
-    unsigned int reihe, spalte;                                 //CS: Wo kommt das hin, hab noch komische Fehler wenn ich die nur im Header deklarier
-    std::string inhalt;
-};
+//struct Position{
+//private:
+//    unsigned int reihe, spalte;                                 //CS: Wo kommt das hin, hab noch komische Fehler wenn ich die nur im Header deklarier
+//public:
+//    std::string inhalt;
+//};
 
 Player::Player(uint8_t groesseSpielfeld)
     :m_anzahl_armor(5),m_groesseSpielfeld(groesseSpielfeld), m_anzahl_health(80), m_anzahl_gold(20), aktPosition(12)
 {
     machSpielfeld(groesseSpielfeld);
-    int zahl =  wobinich();
-
-    cout << zahl << endl;
     ausgabe();
 }
+
+Player::Player(std::string name, uint8_t groesseSpielfeld)
+    :m_name(name) ,m_anzahl_armor(5),m_groesseSpielfeld(groesseSpielfeld), m_anzahl_health(80), m_anzahl_gold(20), aktPosition(12)
+{
+
+}
+
 
 Player::~Player()
 {
@@ -25,13 +31,13 @@ Player::~Player()
 
 void Player::ausgabe() const
 {
-    unsigned int reihe, spalte;
+//    unsigned int reihe, spalte;
+    cout << m_name << endl;
     cout << "Leben: " << static_cast<int>(m_anzahl_health) << endl;
     cout << "Rüstung: " << static_cast<int>(m_anzahl_armor) <<endl;
     cout << "Gold: " << static_cast<int>(m_anzahl_gold) <<endl;
     cout << "Sie sind in der Reihe " << m_position.reihe +1 << " und Spalte " << m_position.spalte +1 << endl;
     cout << endl << endl;
-
 }
 
 bool Player::nextmove()
@@ -76,6 +82,7 @@ bool Player::move()
         break;
         return true;
     }
+    cin.ignore(INT_MAX, '\n');
 }
 
 void Player::machSpielfeld(uint8_t size)

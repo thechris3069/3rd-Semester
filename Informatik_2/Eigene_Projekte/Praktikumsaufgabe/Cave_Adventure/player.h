@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <limits.h>
 
 
 
@@ -11,18 +12,23 @@ class Player
 {
 
 public:
-    uint8_t m_groesseSpielfeld;
-    Player(uint8_t groesseSpielfeld);
+
+    struct Position{
+    public:  //PRIVATE FUNKTIONIERT NICHT
+        unsigned int reihe, spalte;                                 //CS: Wo kommt das hin, hab noch komische Fehler wenn ich die nur im Header deklarier
+        std::string inhalt;
+    };
+
+    Player(uint8_t groesseSpielfeld =15);
+    Player(std::string name, uint8_t groesseSpielfeld);
     ~Player();
         bool nextmove();
 
 private:
-        struct Position
-{    unsigned int reihe, spalte;
-        std::string inhalt;
-    };
+        uint8_t m_groesseSpielfeld{20};
+
+        std::string m_name{"Player_1"};
     void machSpielfeld(uint8_t );
-    int wobinich() const;
     void ausgabe() const;
     bool move();
     void geheEinFeld(int, int);
