@@ -14,24 +14,23 @@ class Player
 public:
 
     struct Position{
-    public:  //PRIVATE FUNKTIONIERT NICHT
-        unsigned int reihe, spalte;                                 //CS: Wo kommt das hin, hab noch komische Fehler wenn ich die nur im Header deklarier
-        std::string inhalt;
+    public:
+        unsigned int reihe, spalte;
     };
-
-    Player(uint8_t groesseSpielfeld =15);
-    Player(std::string name, uint8_t groesseSpielfeld);
+ const uint8_t m_groesseSpielfeld;
+//    Player(const uint8_t groesseSpielfeld =15);
+    Player(const std::string name = "player1", const uint8_t groesseSpielfeld = 15);
     ~Player();
         bool nextmove();
+        void showinventory() const;
+         void ausgabe() const;
 
 private:
-        uint8_t m_groesseSpielfeld{20};
 
-        std::string m_name{"Player_1"};
-    void machSpielfeld(uint8_t );
-    void ausgabe() const;
+    std::string m_name{"Player_1"};
+    void initpos(uint8_t);
     bool move();
-    void geheEinFeld(int, int);
+    void geheEinFeld(const int x, const int y, const int anzahl_schritte = 1);
         struct Position m_position;
 
 

@@ -52,12 +52,14 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../Cave_Adventure/main.cpp \
 		../Cave_Adventure/player.cpp \
-		../Cave_Adventure/Location.cpp \
-		../Cave_Adventure/caveadventure.cpp 
+		../Cave_Adventure/caveadventure.cpp \
+		../Cave_Adventure/world.cpp \
+		../Cave_Adventure/spielfeld.cpp 
 OBJECTS       = main.o \
 		player.o \
-		Location.o \
-		caveadventure.o
+		caveadventure.o \
+		world.o \
+		spielfeld.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -127,11 +129,13 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../Cave_Adventure/Cave_Adventure.pro player.h \
-		location.h \
-		caveadventure.h ../Cave_Adventure/main.cpp \
+		caveadventure.h \
+		world.h \
+		spielfeld.h ../Cave_Adventure/main.cpp \
 		../Cave_Adventure/player.cpp \
-		../Cave_Adventure/Location.cpp \
-		../Cave_Adventure/caveadventure.cpp
+		../Cave_Adventure/caveadventure.cpp \
+		../Cave_Adventure/world.cpp \
+		../Cave_Adventure/spielfeld.cpp
 QMAKE_TARGET  = Cave_Adventure
 DESTDIR       = 
 TARGET        = Cave_Adventure
@@ -325,17 +329,27 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../Cave_Adventure/main.cpp ../Cave_Adventure/player.h
+main.o: ../Cave_Adventure/main.cpp ../Cave_Adventure/caveadventure.h \
+		../Cave_Adventure/player.h \
+		../Cave_Adventure/world.h \
+		../Cave_Adventure/spielfeld.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Cave_Adventure/main.cpp
 
 player.o: ../Cave_Adventure/player.cpp ../Cave_Adventure/player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../Cave_Adventure/player.cpp
 
-Location.o: ../Cave_Adventure/Location.cpp ../Cave_Adventure/location.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Location.o ../Cave_Adventure/Location.cpp
-
-caveadventure.o: ../Cave_Adventure/caveadventure.cpp ../Cave_Adventure/caveadventure.h
+caveadventure.o: ../Cave_Adventure/caveadventure.cpp ../Cave_Adventure/caveadventure.h \
+		../Cave_Adventure/player.h \
+		../Cave_Adventure/world.h \
+		../Cave_Adventure/spielfeld.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o caveadventure.o ../Cave_Adventure/caveadventure.cpp
+
+world.o: ../Cave_Adventure/world.cpp ../Cave_Adventure/world.h \
+		../Cave_Adventure/spielfeld.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o world.o ../Cave_Adventure/world.cpp
+
+spielfeld.o: ../Cave_Adventure/spielfeld.cpp ../Cave_Adventure/spielfeld.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o spielfeld.o ../Cave_Adventure/spielfeld.cpp
 
 ####### Install
 
