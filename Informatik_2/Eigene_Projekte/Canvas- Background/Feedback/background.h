@@ -2,6 +2,9 @@
 #define BACKGROUND_H
 
 #include <iostream>
+#include "brush.h"
+#include <fstream>
+#include <cstdlib>
 
 // CM: #include <string> (fuer string) ergänzen
 
@@ -20,13 +23,17 @@ private:
     uint8_t r; // CM: <- Was sollen diese drei Werte?
     uint8_t g;
     uint8_t b;
-    uint8_t pixelval[200*300*3]; // CM: Falls variable Größe des Bildes verwendet werden soll, steht hier nur die Startadresse des Feldes: uint8_t *pixelval;
+//    uint8_t pixelval[200*300*3]; // CM: Falls variable Größe des Bildes verwendet werden soll, steht hier nur die Startadresse des Feldes: uint8_t *pixelval;
     // CM: Sie könnten auch mit DEFINES für die Zahlen arbeiten :-)
     void setcolor();
-    void paint();
-
-
 public:
+    Brush dreiBreit;
+    uint8_t pixelval[200*300*3];
+    void paint();
+    int saveAsBmp(uint8_t bilddaten[], int b, int h);
+    int saveAsPpm(uint8_t bilddaten[], int b, int h);
+
+
 
 
     Background(std::string color); // CM: Das "std::" ist nur nötig, wenn kein "using namespace std;" oben steht. Da das eher in die cpp soll, bitte lassen :-)

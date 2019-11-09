@@ -4,11 +4,9 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    background.cpp \
-    brush.cpp \
-    color.cpp
+    wuerfel.cpp \
+    wuerfelbecher.cpp
 
 HEADERS += \
-    background.h \
-    brush.h \
-    color.h
+    wuerfel.h \
+    wuerfelbecher.h
