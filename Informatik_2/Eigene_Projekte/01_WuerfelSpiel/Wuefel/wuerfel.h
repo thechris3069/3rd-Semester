@@ -17,7 +17,7 @@ public:
      void wuerfeln();
      void anzeigen();
      unsigned int getZahl(int *);
-     unsigned int getZahl()  // INLINE PROGRAMMIERUNG IM HEADER????
+     unsigned int getZahl()
      {
          return aktZahl;
      }
