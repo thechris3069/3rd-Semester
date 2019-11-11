@@ -25,8 +25,23 @@ void Color::setColor()
         m_green = 204;
         m_blue = 0;
     }
-    else
+
+    else if (m_farbe == "weiß")
     {
+        m_red = 255;
+        m_green = 255;
+        m_blue = 255;
+    }
+    else if (m_farbe == "schwarz")
+    {
+        m_red = 0;
+        m_green = 0;
+        m_blue = 0;
+    }
+    else
+
+    {
+        std::cerr << "Farbe unbekannt" << std::endl <<"Farbe blau gewählt" <<std::endl;
         m_farbe = "blue";
         m_red = 0;
         m_green = 100;

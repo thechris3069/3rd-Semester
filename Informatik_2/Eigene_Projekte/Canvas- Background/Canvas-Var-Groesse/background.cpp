@@ -3,10 +3,16 @@
 using namespace std;
 
 Background::Background(std::string color, int laenge, int breite)
-    :m_Farbe(color), size_x(breite), size_y(laenge), arraylength(size_x* size_y * 3)
+    :m_Farbe(color), size_x(breite), size_y(laenge), arraylength(laenge* breite * 3)
 {
-    pixelval = new uint8_t[size_x * size_y * 3];
+    pixelval = new uint8_t[arraylength];
     paint();
+}
+
+void Background::save(Background b)
+{
+    saveAsBmp(b.pixelval, b.getSize_x(), b.getSize_y());
+    saveAsPpm(b.pixelval, b.getSize_x(), b.getSize_y());
 }
 
 Background::Background()
@@ -15,15 +21,16 @@ Background::Background()
     paint();
 }
 
-Background::Background(int red, int green, int blue)
-    :m_Farbe(red, green, blue) , size_x(200), size_y(300), arraylength(size_x*size_y*3)
+Background::Background(int red, int green, int blue, int laenge, int breite)
+    :m_Farbe(red, green, blue) , size_x(breite), size_y(laenge), arraylength(size_x*size_y*3)
 {
 paint();
 }
 
 Background::~Background()
 {
-    delete pixelval;
+//    delete pixelval; // Nicht nötig?
+    // Macht der das von selber?
 }
 
 void Background::paint()
@@ -46,9 +53,9 @@ void Background::paint()
     }
 }
 
-void Background::drawline(int startrow, int endrow, int startcol, int endcol, std::string namePinselfarbe)
+void Background::drawline(int startrow, int endrow, int startcol, int endcol, std::string name_Pinselfarbe)
 {
-    Color Pinselfarbe(namePinselfarbe);
+    Color Pinselfarbe(name_Pinselfarbe);
     for(int row = startrow; row <= endrow; ++row)
     {
         for(int col = startcol; col <=endcol; ++col)
@@ -60,9 +67,9 @@ void Background::drawline(int startrow, int endrow, int startcol, int endcol, st
 
 void Background::setPixel(int row, int col, Color Pinselfarbe)
 {
-    pixelval[(row*200+col)*3+1] = Pinselfarbe.getRed();
-    pixelval[(row*200+col)*3+2] = Pinselfarbe.getGreen();
-    pixelval[(row*200+col)*3+3] = Pinselfarbe.getBlue();
+    pixelval[(row*size_x+col)*3+0] = Pinselfarbe.getRed();
+    pixelval[(row*size_x+col)*3+1] = Pinselfarbe.getGreen();
+    pixelval[(row*size_x+col)*3+2] = Pinselfarbe.getBlue();
 
 }
 

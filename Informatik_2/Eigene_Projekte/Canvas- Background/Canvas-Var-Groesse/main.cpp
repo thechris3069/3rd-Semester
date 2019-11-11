@@ -36,14 +36,13 @@ using namespace std;
 
 void SavePicture(Background picture)
 {
-    picture.saveAsBmp(picture.getarray(), picture.getSize_x(), picture.getSize_y());
-    picture.saveAsPpm(picture.getarray(), picture.getSize_x(), picture.getSize_y());
-}
+    picture.save(picture);
+   }
 
 int main()
 {
-    Background pictureOne("yellow", 200, 400);
-    pictureOne.drawline(60, 60, 60, 160, "schwarz");
+    Background pictureOne("weiß",100, 100);
+    pictureOne.drawline(0,0,1,5, "schwarz");
     SavePicture(pictureOne);
     return 0;
 }
