@@ -8,7 +8,11 @@
 class Brush
 {
 public:
+    Color *m_Std_Farbe = new Color(0,255,0);       //Hier funktioniert nur der StandardKonstruktor Fehler bei Color m_Std_Farbe(1,0,1)
+    Color *m_currentColor = nullptr;               //std_Farbe als std currentColor
     Brush(int groesseX = 1, int groesseY = 1);
+    void malemitFarbe();
+    void malemitFarbe(Color *Farbe);
     int getWidth()
     {return m_xgroesse;
     }

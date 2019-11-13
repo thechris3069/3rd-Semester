@@ -3,97 +3,96 @@
 using namespace std;
 
 Background::Background(Color *color, int laenge, int breite)
-    :m_currentColor(color), size_x(breite), size_y(laenge), arraylength(laenge* breite * 3)
+    :size_x(breite), size_y(laenge), arraylength(laenge* breite * 3)
 {
+    Color *hintergrundfarbe = color;
     pixelval = new uint8_t[arraylength];
-    paint();
-}
-
-void Background::save()
-{
-    saveAsBmp(pixelval, getSize_x(), getSize_y());
-    saveAsPpm(pixelval, getSize_x(), getSize_y());
+    paint(hintergrundfarbe);
 }
 
 Background::Background()
-    :m_currentColor(m_Std_Farbe) , size_x(200), size_y(300), arraylength(size_x*size_y*3)
+    :size_x(200), size_y(300), arraylength(size_x*size_y*3)
 {
-    paint();
+    Color c;
+    paint(&c);
 }
 
 Background::Background(int red, int green, int blue, int laenge, int breite)
     :size_x(breite), size_y(laenge), arraylength(size_x*size_y*3)
 {
-    m_currentColor = new Color(red, green, blue);
-paint();
+    Color m_currentColor(red, green, blue);
+    paint(&m_currentColor);
+
 }
+
+
 
 Background::~Background()
 {
     delete[] pixelval; // SEGMENTATION FAULT ERROR  "double free or corruption(!prev)" in console
 }
 
-void Background::paint()
+void Background::paint(Color *c)
 {
     for(unsigned int i = 0; i < arraylength; ++i)
     {
         switch (i % 3){
         case 0:
-            pixelval[i] = m_currentColor->getRed();
+            pixelval[i] = c->getRed();
             break;
 
         case 1:
-            pixelval[i] = m_currentColor->getGreen();
+            pixelval[i] = c->getGreen();
             break;
         case 2:
-            pixelval[i] = m_currentColor->getBlue();
+            pixelval[i] = c->getBlue();
             break;
         }
     }
-    m_currentColor = nullptr;
+//    m_currentColor = nullptr;
 }
 
 void Background::drawline(int startrow, int endrow, int startcol, int endcol)
 {
-       malemitFarbe();
+    waehlePinsel();
+       m_currenBrush->malemitFarbe();
     for(int row = startrow; row <= endrow; ++row)
     {
         for(int col = startcol; col <=endcol; ++col)
         {
-            setPixel(row, col);
+            setPixel(row, col, *(m_currenBrush->m_currentColor));
         }
     }
 }
 
+void Background::waehlePinsel()
+{
+   if(m_currenBrush == nullptr)
+       m_currenBrush = &m_stdPinsel; // Bad Alloc, da noch kein Pinsel zugewiesen wurde, Zeiger zeigt irgendwo hin
+
+}
+
+
 void Background::waehlePinsel(Brush *Pinsel)
 {
     if(Pinsel == nullptr)
-        m_currenBrush = &schmallerPinsel;
+        m_currenBrush = &m_stdPinsel;
     else
         m_currenBrush = Pinsel;
-
 }
 
-void Background::malemitFarbe(Color *Farbe)
+void Background::setPixel(int row, int col, Color c)
 {
-    if(Farbe == nullptr)
-    m_currentColor = m_Std_Farbe;
-    else
-    m_currentColor = Farbe;
-}
-void Background::malemitFarbe()
-{
-    if (m_currentColor != nullptr) {}
-    else
-        m_currentColor = m_Std_Farbe;
+    pixelval[(row*size_x+col)*3+0] = c.getRed();
+    pixelval[(row*size_x+col)*3+1] =  c.getGreen();
+    pixelval[(row*size_x+col)*3+2] =  c.getBlue();
 }
 
-void Background::setPixel(int row, int col)
-{
-    pixelval[(row*size_x+col)*3+0] = m_currentColor->getRed();
-    pixelval[(row*size_x+col)*3+1] = m_currentColor->getGreen();
-    pixelval[(row*size_x+col)*3+2] = m_currentColor->getBlue();
 
+void Background::save()
+{
+    saveAsBmp(pixelval, getSize_x(), getSize_y());
+    saveAsPpm(pixelval, getSize_x(), getSize_y());
 }
 
 // CM: Sie könnten die Funktionen auch als Methoden in die Klasse integrieren (siehe https://git.etech.fh-augsburg.de/claudia.meitinger/informatik2/tree/master/canvas). Dann wäre die Funktionalität nch etwas schöner gekapselt und der "save"-Aufruf im Hauptprogramm noch einfacher für den Benutzer.

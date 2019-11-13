@@ -41,15 +41,17 @@ void SavePicture(Background picture)
 
 int main()
 {
+    Brush b;
     Color gelb("yellow");
     Color rot("red");
     Color weiss("weiß");
     Color schwarz("schwarz");
     Color grau(100,100,100);
     Background pictureOne(&gelb,100, 100);
-//    pictureOne.malemitFarbe(&rot);
-    pictureOne.drawline(10,180,1,1);
-    pictureOne.malemitFarbe(&grau);
+    b.malemitFarbe(&rot);
+    pictureOne.drawline(10,180,100,100);
+//    pictureOne.malemitFarbe(&grau);
+        b.malemitFarbe(&weiss);
     pictureOne.drawline(10,20,100,120);
 
     SavePicture(pictureOne);

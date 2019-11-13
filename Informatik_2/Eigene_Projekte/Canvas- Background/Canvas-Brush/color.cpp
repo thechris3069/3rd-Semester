@@ -9,6 +9,7 @@ Color::Color(const std::string farbe)
 Color::Color(int red, int green, int blue)
     :m_red(red), m_green(green), m_blue(blue)
 {
+    m_farbe = "Neue Farbe";
 }
 
 void Color::setColor()
@@ -39,7 +40,6 @@ void Color::setColor()
         m_blue = 0;
     }
     else
-
     {
         std::cerr << "Farbe unbekannt" << std::endl <<"Farbe blau gewählt" <<std::endl;
         m_farbe = "blue";
