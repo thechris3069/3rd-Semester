@@ -36,22 +36,13 @@ using namespace std;
 
 void SavePicture(Background picture)
 {
-    picture.save();
+    picture.save(picture);
    }
 
 int main()
 {
-    Color gelb("yellow");
-    Color rot("red");
-    Color weiss("weiß");
-    Color schwarz("schwarz");
-    Color grau(100,100,100);
-    Background pictureOne(&gelb,100, 100);
-//    pictureOne.malemitFarbe(&rot);
-    pictureOne.drawline(10,180,1,1);
-    pictureOne.malemitFarbe(&grau);
-    pictureOne.drawline(10,20,100,120);
-
+    Background pictureOne("weiß",100, 100);
+    pictureOne.drawline(0,0,1,5, "schwarz");
     SavePicture(pictureOne);
     return 0;
 }

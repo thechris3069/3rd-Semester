@@ -14,30 +14,27 @@ class Background
 private:
     unsigned int size_x;
     unsigned int size_y;
-
     unsigned int arraylength;
-    uint8_t *pixelval = new uint8_t; // CM: Falls variable Größe des Bildes verwendet werden soll, steht hier nur die Startadresse des Feldes: uint8_t *pixelval;
-    void setPixel(int row, int col, Color Pinselfarbe);
+    uint8_t *pixelval;
+    void setPixel(int row, int col);
     int saveAsBmp(uint8_t bilddaten[], int b, int h);
     int saveAsPpm(uint8_t bilddaten[], int b, int h);
 protected:
            Brush *m_currenBrush;
            Brush schmallerPinsel;
-           Color m_Farbe;
-           Color *m_currentColor;
+           Color *m_Std_Farbe = new Color(0,255,0);       //Hier funktioniert nur der StandardKonstruktor Fehler bei Color m_Std_Farbe(1,0,1)
+           Color *m_currentColor = nullptr;               //std_Farbe als std currentColor
 public:
-
-
-    void paint();
-    void save();
-    void drawline(int startrow = 50, int endrow = 50, int startcol = 50, int endcol = 150, std::string namePinselfarbe = "schwarz");
-    void malemitFarbe(Color *Farbe = nullptr);
+    void paint(); // wird nur bei maleHintergrund aufgerufen
+    void save(); // ruft beide save Funktions auf, save as bmp und ppm
+    void drawline(int startrow = 50, int endrow = 50, int startcol = 50, int endcol = 150);
+    void malemitFarbe(Color *Farbe);
+    void malemitFarbe();
     void waehlePinsel(Brush *Pinsel = nullptr);
-    Background(std::string color = "blue", int laenge = 300, int breite = 200); // CM: Das "std::" ist nur nötig, wenn kein "using namespace std;" oben steht. Da das eher in die cpp soll, bitte lassen :-)
+    Background(Color *color = nullptr, int laenge = 300, int breite = 200);
     Background(int red, int green, int blue, int laenge, int breite);
     Background();
     ~Background();
-
 
     unsigned int getSize_x() const
     {
@@ -48,5 +45,4 @@ public:
         return this->size_y;
     }
 };
-
 #endif // BACKGROUND_H

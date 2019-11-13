@@ -14,7 +14,7 @@ private:
     unsigned int size_x;
     unsigned int size_y;
     unsigned int arraylength;
-    uint8_t *pixelval;
+    uint8_t *pixelval = new uint8_t; // CM: Falls variable Größe des Bildes verwendet werden soll, steht hier nur die Startadresse des Feldes: uint8_t *pixelval;
 
 public:
     Color m_Farbe;

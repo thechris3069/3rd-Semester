@@ -5,14 +5,18 @@ using namespace std;
 Background::Background(std::string color, int laenge, int breite)
     :m_Farbe(color), size_x(breite), size_y(laenge), arraylength(laenge* breite * 3)
 {
-    pixelval = new uint8_t[arraylength];
+    pixelval = new uint8_t[arraylength]; // CM: dieses new ist das, das Sie brauchen.
     paint();
 }
 
-void Background::save(Background b)
+void Background::save(Background b) // CM: Warum übergeben Sie hier den Background und rufen die Funktionen nicht einfach auf dem Objekt selbst auf ("this->")??
+// CM: also void Background::save()
 {
     saveAsBmp(b.pixelval, b.getSize_x(), b.getSize_y());
+    // CM: saveAsBmp(pixelval, getSize_x(), getSize_y());
+    // CM: Da saveAsBmp zudem Teil der Klasse ist, könnten Sie die Parameter auch ganz weglassen und in saveAsBpm direkt auf die Daten zugreifen.
     saveAsPpm(b.pixelval, b.getSize_x(), b.getSize_y());
+    // CM: analog.
 }
 
 Background::Background()
@@ -29,8 +33,8 @@ paint();
 
 Background::~Background()
 {
-   delete[] pixelval;
-
+//    delete pixelval; // Nicht nötig? // CM: doch, aber da oben new[...], hier delete[] pixelval;
+    // Macht der das von selber? // CM: Nein.
 }
 
 void Background::paint()

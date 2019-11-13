@@ -2,8 +2,8 @@
 
 using namespace std;
 
-Background::Background(std::string color, int laenge, int breite)
-    :m_Farbe(color), size_x(breite), size_y(laenge), arraylength(laenge* breite * 3)
+Background::Background(Color *color, int laenge, int breite)
+    :m_currentColor(color), size_x(breite), size_y(laenge), arraylength(laenge* breite * 3)
 {
     pixelval = new uint8_t[arraylength];
     paint();
@@ -16,52 +16,51 @@ void Background::save()
 }
 
 Background::Background()
-    :m_Farbe("blue") , size_x(200), size_y(300), arraylength(size_x*size_y*3)
+    :m_currentColor(m_Std_Farbe) , size_x(200), size_y(300), arraylength(size_x*size_y*3)
 {
     paint();
 }
 
 Background::Background(int red, int green, int blue, int laenge, int breite)
-    :m_Farbe(red, green, blue) , size_x(breite), size_y(laenge), arraylength(size_x*size_y*3)
+    :size_x(breite), size_y(laenge), arraylength(size_x*size_y*3)
 {
+    m_currentColor = new Color(red, green, blue);
 paint();
 }
 
 Background::~Background()
 {
-//    delete pixelval; // Nicht nötig?
-    // Macht der das von selber?
+    delete[] pixelval; // SEGMENTATION FAULT ERROR  "double free or corruption(!prev)" in console
 }
 
 void Background::paint()
 {
-    for(int i = 0; i < arraylength; ++i)
+    for(unsigned int i = 0; i < arraylength; ++i)
     {
         switch (i % 3){
         case 0:
-            pixelval[i] = m_Farbe.getRed();
+            pixelval[i] = m_currentColor->getRed();
             break;
 
         case 1:
-            pixelval[i] = m_Farbe.getGreen();
+            pixelval[i] = m_currentColor->getGreen();
             break;
-
         case 2:
-            pixelval[i] = m_Farbe.getBlue();
+            pixelval[i] = m_currentColor->getBlue();
             break;
         }
     }
+    m_currentColor = nullptr;
 }
 
-void Background::drawline(int startrow, int endrow, int startcol, int endcol, std::string name_Pinselfarbe)
+void Background::drawline(int startrow, int endrow, int startcol, int endcol)
 {
-
-    Color Pinselfarbe(name_Pinselfarbe);
+       malemitFarbe();
     for(int row = startrow; row <= endrow; ++row)
     {
         for(int col = startcol; col <=endcol; ++col)
         {
-            setPixel(row, col, Pinselfarbe);
+            setPixel(row, col);
         }
     }
 }
@@ -78,16 +77,22 @@ void Background::waehlePinsel(Brush *Pinsel)
 void Background::malemitFarbe(Color *Farbe)
 {
     if(Farbe == nullptr)
-    m_currentColor = &m_Farbe;
+    m_currentColor = m_Std_Farbe;
     else
     m_currentColor = Farbe;
 }
-
-void Background::setPixel(int row, int col, Color Pinselfarbe)
+void Background::malemitFarbe()
 {
-    pixelval[(row*size_x+col)*3+0] = Pinselfarbe.getRed();
-    pixelval[(row*size_x+col)*3+1] = Pinselfarbe.getGreen();
-    pixelval[(row*size_x+col)*3+2] = Pinselfarbe.getBlue();
+    if (m_currentColor != nullptr) {}
+    else
+        m_currentColor = m_Std_Farbe;
+}
+
+void Background::setPixel(int row, int col)
+{
+    pixelval[(row*size_x+col)*3+0] = m_currentColor->getRed();
+    pixelval[(row*size_x+col)*3+1] = m_currentColor->getGreen();
+    pixelval[(row*size_x+col)*3+2] = m_currentColor->getBlue();
 
 }
 
