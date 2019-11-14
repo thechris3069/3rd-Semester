@@ -5,6 +5,7 @@ using namespace std;
 Background::Background(Color *color, int laenge, int breite)
     :size_x(breite), size_y(laenge), arraylength(laenge* breite * 3)
 {
+      m_currenBrush = nullptr;
     Color *hintergrundfarbe = color;
     pixelval = new uint8_t[arraylength];
     paint(hintergrundfarbe);
@@ -13,6 +14,7 @@ Background::Background(Color *color, int laenge, int breite)
 Background::Background()
     :size_x(200), size_y(300), arraylength(size_x*size_y*3)
 {
+    m_currenBrush = nullptr;
     Color c;
     paint(&c);
 }
@@ -20,6 +22,7 @@ Background::Background()
 Background::Background(int red, int green, int blue, int laenge, int breite)
     :size_x(breite), size_y(laenge), arraylength(size_x*size_y*3)
 {
+      m_currenBrush = nullptr;
     Color m_currentColor(red, green, blue);
     paint(&m_currentColor);
 
@@ -54,7 +57,7 @@ void Background::paint(Color *c)
 
 void Background::drawline(int startrow, int endrow, int startcol, int endcol)
 {
-    waehlePinsel();
+     m_currenBrush = getPinsel();
        m_currenBrush->malemitFarbe();
     for(int row = startrow; row <= endrow; ++row)
     {
@@ -69,7 +72,19 @@ void Background::waehlePinsel()
 {
    if(m_currenBrush == nullptr)
        m_currenBrush = &m_stdPinsel; // Bad Alloc, da noch kein Pinsel zugewiesen wurde, Zeiger zeigt irgendwo hin
+}
 
+void Background::setPinsel(Brush *Pinsel)
+{
+    if (Pinsel == nullptr)
+    {
+        m_currenBrush = &m_stdPinsel;
+    }
+}
+
+Brush* Background::getPinsel()
+{
+    return m_currenBrush;
 }
 
 

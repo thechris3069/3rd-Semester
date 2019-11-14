@@ -13,6 +13,8 @@ public:
     Brush(int groesseX = 1, int groesseY = 1);
     void malemitFarbe();
     void malemitFarbe(Color *Farbe);
+    void getFarbe();
+    void setFarbe();
     int getWidth()
     {return m_xgroesse;
     }

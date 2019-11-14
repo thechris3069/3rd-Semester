@@ -33,7 +33,7 @@ paint();
 
 Background::~Background()
 {
-//    delete pixelval; // Nicht nötig? // CM: doch, aber da oben new[...], hier delete[] pixelval;
+    delete[] pixelval; // Nicht nötig? // CM: doch, aber da oben new[...], hier delete[] pixelval;
     // Macht der das von selber? // CM: Nein.
 }
 

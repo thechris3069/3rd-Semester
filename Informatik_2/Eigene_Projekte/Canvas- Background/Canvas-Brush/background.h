@@ -21,8 +21,10 @@ private:
     int saveAsPpm(uint8_t bilddaten[], int b, int h);
 
 public:
-    Brush *m_currenBrush;
+    Brush *m_currenBrush = nullptr;
     Brush m_stdPinsel;
+    void setPinsel(Brush *Pinsel = nullptr);
+    Brush* getPinsel();
     //setPinsel; getPinsel;
     Background(Color *color = nullptr, int laenge = 300, int breite = 200);
     Background(int red, int green, int blue, int laenge, int breite);
@@ -30,7 +32,7 @@ public:
     ~Background();
 
     void paint(Color *c); // wird nur bei maleHintergrund aufgerufen
-    void save(); // ruft beide save Funktions auf, save as bmp und ppm
+    void save(); // ruft beide save Funktions auf, saveasbmp und saveasppm
     void drawline(int startrow = 50, int endrow = 50, int startcol = 50, int endcol = 150);
     void waehlePinsel(Brush *Pinsel);
     void waehlePinsel();

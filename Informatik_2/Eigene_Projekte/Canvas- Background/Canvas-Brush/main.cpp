@@ -34,9 +34,10 @@
 
 using namespace std;
 
-void SavePicture(Background picture)
+void SavePicture(Background &picture)
 {
     picture.save();
+
    }
 
 int main()
@@ -51,9 +52,10 @@ int main()
     b.malemitFarbe(&rot);
     pictureOne.drawline(10,180,100,100);
 //    pictureOne.malemitFarbe(&grau);
-        b.malemitFarbe(&weiss);
-    pictureOne.drawline(10,20,100,120);
+//        b.malemitFarbe(&weiss);
+//    pictureOne.drawline(10,20,100,120);
 
     SavePicture(pictureOne);
+//    pictureOne.save();
     return 0;
 }
