@@ -4,7 +4,6 @@ Brush::Brush(int groesseX, int groesseY)
     :m_xgroesse(groesseX), m_ygroesse(groesseY)
 {
     m_currentColor = nullptr;
-
 }
 
 void Brush::malemitFarbe(Color *Farbe)
@@ -15,14 +14,17 @@ void Brush::malemitFarbe(Color *Farbe)
     m_currentColor = Farbe;
 }
 
-void Brush::setFarbe()
+void Brush::setFarbe(Color *farbe)
 {
-
+    m_currentColor = farbe;
 }
 
 void Brush::getFarbe()
 {
-
+    if(m_currentColor == nullptr)
+    {
+        m_currentColor = m_Std_Farbe;
+    }
 }
 
 void Brush::malemitFarbe()

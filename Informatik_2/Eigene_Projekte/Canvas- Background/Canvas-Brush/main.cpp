@@ -34,7 +34,7 @@
 
 using namespace std;
 
-void SavePicture(Background &picture)
+void savePicture(Background &picture)
 {
     picture.save();
 
@@ -42,20 +42,21 @@ void SavePicture(Background &picture)
 
 int main()
 {
-    Brush b;
+    Brush b(3,3);
     Color gelb("yellow");
     Color rot("red");
     Color weiss("weiß");
     Color schwarz("schwarz");
     Color grau(100,100,100);
     Background pictureOne(&gelb,100, 100);
+    pictureOne.setPinsel(&b);
     b.malemitFarbe(&rot);
-    pictureOne.drawline(10,180,100,100);
-//    pictureOne.malemitFarbe(&grau);
-//        b.malemitFarbe(&weiss);
-//    pictureOne.drawline(10,20,100,120);
+    pictureOne.drawline(10,180,100,100); //Pinsel wird als STD gesetzt, obwohl ein Pinsel erstellt wurde
+    b.setFarbe(&weiss);
+    pictureOne.drawline(10,20,100,120);
+    savePicture(pictureOne);
 
-    SavePicture(pictureOne);
-//    pictureOne.save();
     return 0;
 }
+
+//GROESSE von Pinsel implementieren

@@ -14,7 +14,7 @@ public:
     void malemitFarbe();
     void malemitFarbe(Color *Farbe);
     void getFarbe();
-    void setFarbe();
+    void setFarbe(Color *farbe);
     int getWidth()
     {return m_xgroesse;
     }

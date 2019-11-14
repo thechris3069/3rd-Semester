@@ -19,13 +19,12 @@ private:
     void setPixel(int row, int col, Color c);
     int saveAsBmp(uint8_t bilddaten[], int b, int h);
     int saveAsPpm(uint8_t bilddaten[], int b, int h);
-
+    int berechnealphafarbe(int alterFarbwert, int FarbevonPinsel, int alphavonPinsel);
 public:
     Brush *m_currenBrush = nullptr;
     Brush m_stdPinsel;
     void setPinsel(Brush *Pinsel = nullptr);
     Brush* getPinsel();
-    //setPinsel; getPinsel;
     Background(Color *color = nullptr, int laenge = 300, int breite = 200);
     Background(int red, int green, int blue, int laenge, int breite);
     Background();
@@ -34,8 +33,8 @@ public:
     void paint(Color *c); // wird nur bei maleHintergrund aufgerufen
     void save(); // ruft beide save Funktions auf, saveasbmp und saveasppm
     void drawline(int startrow = 50, int endrow = 50, int startcol = 50, int endcol = 150);
-    void waehlePinsel(Brush *Pinsel);
-    void waehlePinsel();
+//    void waehlePinsel(Brush *Pinsel);
+//    void waehlePinsel();
     unsigned int getSize_x() const
     {    return this->size_x;}
     unsigned int getSize_y() const

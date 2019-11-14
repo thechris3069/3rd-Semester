@@ -25,14 +25,18 @@ Background::Background(int red, int green, int blue, int laenge, int breite)
       m_currenBrush = nullptr;
     Color m_currentColor(red, green, blue);
     paint(&m_currentColor);
-
 }
 
+int Background::berechnealphafarbe(int alterFarbwert, int FarbevonPinsel, int alphavonPinsel)
+{
+    int neuefarbe = alterFarbwert*alphavonPinsel/255 + FarbevonPinsel*(255- alphavonPinsel)/255;
+    return neuefarbe;
+}
 
 
 Background::~Background()
 {
-    delete[] pixelval; // SEGMENTATION FAULT ERROR  "double free or corruption(!prev)" in console
+    delete[] pixelval;
 }
 
 void Background::paint(Color *c)
@@ -43,7 +47,6 @@ void Background::paint(Color *c)
         case 0:
             pixelval[i] = c->getRed();
             break;
-
         case 1:
             pixelval[i] = c->getGreen();
             break;
@@ -52,7 +55,6 @@ void Background::paint(Color *c)
             break;
         }
     }
-//    m_currentColor = nullptr;
 }
 
 void Background::drawline(int startrow, int endrow, int startcol, int endcol)
@@ -68,11 +70,6 @@ void Background::drawline(int startrow, int endrow, int startcol, int endcol)
     }
 }
 
-void Background::waehlePinsel()
-{
-   if(m_currenBrush == nullptr)
-       m_currenBrush = &m_stdPinsel; // Bad Alloc, da noch kein Pinsel zugewiesen wurde, Zeiger zeigt irgendwo hin
-}
 
 void Background::setPinsel(Brush *Pinsel)
 {
@@ -80,27 +77,22 @@ void Background::setPinsel(Brush *Pinsel)
     {
         m_currenBrush = &m_stdPinsel;
     }
+    m_currenBrush = Pinsel;
 }
 
 Brush* Background::getPinsel()
 {
+    if (m_currenBrush == nullptr)
+        m_currenBrush = &m_stdPinsel;
     return m_currenBrush;
 }
 
 
-void Background::waehlePinsel(Brush *Pinsel)
-{
-    if(Pinsel == nullptr)
-        m_currenBrush = &m_stdPinsel;
-    else
-        m_currenBrush = Pinsel;
-}
-
 void Background::setPixel(int row, int col, Color c)
 {
-    pixelval[(row*size_x+col)*3+0] = c.getRed();
-    pixelval[(row*size_x+col)*3+1] =  c.getGreen();
-    pixelval[(row*size_x+col)*3+2] =  c.getBlue();
+    pixelval[(row*size_x+col)*3+0] = berechnealphafarbe(pixelval[(row*size_x+col)*3+0], c.getRed(), c.getalpha());
+    pixelval[(row*size_x+col)*3+1] =  berechnealphafarbe(pixelval[(row*size_x+col)*3+1], c.getGreen(), c.getalpha());
+    pixelval[(row*size_x+col)*3+2] =  berechnealphafarbe(pixelval[(row*size_x+col)*3+2], c.getBlue(), c.getalpha());
 }
 
 
@@ -197,3 +189,4 @@ int Background::saveAsPpm(uint8_t bilddaten[], int b, int h)
     }
     return 0;
 }
+

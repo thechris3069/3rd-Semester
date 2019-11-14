@@ -1,13 +1,13 @@
 #include "color.h"
 
-Color::Color(const std::string farbe)
-    :m_farbe(farbe)
+Color::Color(const std::string farbe, int alpha)
+    :m_farbe(farbe), m_alpha(alpha)
 {
     setColor();
 }
 
-Color::Color(int red, int green, int blue)
-    :m_red(red), m_green(green), m_blue(blue)
+Color::Color(int red, int green, int blue, int alpha)
+    :m_red(red), m_green(green), m_blue(blue), m_alpha(alpha)
 {
     m_farbe = "Neue Farbe";
 }
