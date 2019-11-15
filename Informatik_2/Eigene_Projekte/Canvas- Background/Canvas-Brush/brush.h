@@ -15,6 +15,7 @@ public:
     void malemitFarbe(Color *Farbe);
     void getFarbe();
     void setFarbe(Color *farbe);
+    bool drawAt(int col, int val);
     int getWidth()
     {return m_xgroesse;
     }
@@ -23,6 +24,7 @@ public:
         return m_ygroesse;
     } 
     const int m_xgroesse, m_ygroesse;
+
 };
 
 #endif // BRUSH_H

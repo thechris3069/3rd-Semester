@@ -31,6 +31,10 @@
 
 #include "background.h"
 
+//int a = 10;
+//int bc= 10;
+
+//char password[] = "Hallo";
 
 using namespace std;
 
@@ -42,6 +46,33 @@ void savePicture(Background &picture)
 
 int main()
 {
+
+//    cout << &a << endl;
+//    cout << &bc << endl;
+
+
+//    int *p  = &a;
+
+//    *(p+1) = 99;
+
+//    cout << bc << endl;
+//#if 0
+//    long long wo =0;
+//    cin >> wo;
+//    *((int *)wo) = 10;
+//    cout << bc << endl;
+//#endif
+
+//    for( int i = 0; i <100; i++){
+//        printf("%c ", *((char *) &bc +i));
+
+
+
+//    }
+//    cout << endl;
+
+
+
     Brush b(3,3);
     Color gelb("yellow");
     Color rot("red");
