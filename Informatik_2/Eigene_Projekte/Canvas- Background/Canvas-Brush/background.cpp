@@ -65,7 +65,7 @@ void Background::drawline(int startrow, int endrow, int startcol, int endcol)
     {
         for(int col = startcol; col <=endcol; ++col)
         {
-            setPixelWithBrush(m_currenBrush->getHeight(), m_currenBrush->getWidth());
+//            setPixelWithBrush(m_currenBrush->getHeight(), m_currenBrush->getWidth());
             setPixel(row, col, *(m_currenBrush->m_currentColor));
         }
     }
@@ -96,16 +96,15 @@ void Background::setPixel(int row, int col, Color c)
     pixelval[(row*size_x+col)*3+2] =  berechnealphafarbe(pixelval[(row*size_x+col)*3+2], c.getBlue(), c.getalpha());
 }
 
-void Background::setPixelWithBrush(m_currenBrush) //TODO: noch ausarbeiten
-{
+//void Background::setPixelWithBrush(m_currenBrush) //TODO: noch ausarbeiten
+//{
 
-    m_currenBrush->getHeight();
-    m_currenBrush->getWidth();
-    for(int i = 0; i < heigth; i++)
-        for(int j=0j <width; j++)
-    m_currenBrush->drawAt();
-
-}
+//    m_currenBrush->getHeight();
+//    m_currenBrush->getWidth();
+//    for(int i = 0; i < heigth; i++)
+//        for(int j=0j <width; j++)
+//    m_currenBrush->drawAt();
+//}
 
 void Background::save()
 {
