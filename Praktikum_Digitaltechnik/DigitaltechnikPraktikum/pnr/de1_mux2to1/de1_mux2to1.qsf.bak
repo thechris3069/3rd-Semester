@@ -18,14 +18,14 @@
 #
 # Quartus II 64-Bit
 # Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-# Date created = 16:47:05  September 17, 2013
+# Date created = 17:00:58  September 17, 2013
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		de1_binto7segment_assignment_defaults.qdf
+#		de1_mux2to1_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -38,32 +38,18 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C20F484C7
-set_global_assignment -name TOP_LEVEL_ENTITY de1_binto7segment
+set_global_assignment -name TOP_LEVEL_ENTITY de1_mux2to1
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:47:05  SEPTEMBER 17, 2013"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:00:58  SEPTEMBER 17, 2013"
 set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
-set_global_assignment -name VHDL_FILE ../../src/binto7segment_truthtable.vhd
-set_global_assignment -name VHDL_FILE ../../src/de1_binto7segment_structure.vhd
-set_location_assignment PIN_L22 -to SW[0]
-set_location_assignment PIN_L21 -to SW[1]
-set_location_assignment PIN_M22 -to SW[2]
-set_location_assignment PIN_V12 -to SW[3]
-set_location_assignment PIN_R20 -to LEDR[0]
-set_location_assignment PIN_R19 -to LEDR[1]
-set_location_assignment PIN_U19 -to LEDR[2]
-set_location_assignment PIN_Y19 -to LEDR[3]
-set_location_assignment PIN_J2 -to HEX0[0]
-set_location_assignment PIN_J1 -to HEX0[1]
-set_location_assignment PIN_H2 -to HEX0[2]
-set_location_assignment PIN_H1 -to HEX0[3]
-set_location_assignment PIN_F2 -to HEX0[4]
-set_location_assignment PIN_F1 -to HEX0[5]
-set_location_assignment PIN_E2 -to HEX0[6]
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+set_global_assignment -name VHDL_FILE ../../src/mux2to1_equation.vhd
+set_global_assignment -name VHDL_FILE ../../src/de1_mux2to1_structure.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
