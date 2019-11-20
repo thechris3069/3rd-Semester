@@ -7,7 +7,7 @@
 class CaveAdventure
 {
 public:
-    CaveAdventure(unsigned int groesseSpielfeld = 15);
+    CaveAdventure(std::string spielername, unsigned int groesseSpielfeld = 15);
     ~CaveAdventure();
     World m_world;
     void nextMove();

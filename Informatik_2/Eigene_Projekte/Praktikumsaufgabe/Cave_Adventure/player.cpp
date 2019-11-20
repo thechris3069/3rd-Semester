@@ -50,7 +50,7 @@ bool Player::move()
     eingabe = toupper(eingabe);
     switch (eingabe)
     {
-    case 'B':
+    case 'B':       //BEENDEN
         return false;
 
     case 'D':

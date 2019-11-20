@@ -54,12 +54,12 @@ SOURCES       = ../Cave_Adventure/main.cpp \
 		../Cave_Adventure/player.cpp \
 		../Cave_Adventure/caveadventure.cpp \
 		../Cave_Adventure/world.cpp \
-		../Cave_Adventure/spielfeld.cpp 
+		../Cave_Adventure/raum.cpp 
 OBJECTS       = main.o \
 		player.o \
 		caveadventure.o \
 		world.o \
-		spielfeld.o
+		raum.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -131,11 +131,11 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../Cave_Adventure/Cave_Adventure.pro player.h \
 		caveadventure.h \
 		world.h \
-		spielfeld.h ../Cave_Adventure/main.cpp \
+		raum.h ../Cave_Adventure/main.cpp \
 		../Cave_Adventure/player.cpp \
 		../Cave_Adventure/caveadventure.cpp \
 		../Cave_Adventure/world.cpp \
-		../Cave_Adventure/spielfeld.cpp
+		../Cave_Adventure/raum.cpp
 QMAKE_TARGET  = Cave_Adventure
 DESTDIR       = 
 TARGET        = Cave_Adventure
@@ -332,7 +332,7 @@ compiler_clean:
 main.o: ../Cave_Adventure/main.cpp ../Cave_Adventure/caveadventure.h \
 		../Cave_Adventure/player.h \
 		../Cave_Adventure/world.h \
-		../Cave_Adventure/spielfeld.h
+		../Cave_Adventure/raum.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Cave_Adventure/main.cpp
 
 player.o: ../Cave_Adventure/player.cpp ../Cave_Adventure/player.h
@@ -341,15 +341,15 @@ player.o: ../Cave_Adventure/player.cpp ../Cave_Adventure/player.h
 caveadventure.o: ../Cave_Adventure/caveadventure.cpp ../Cave_Adventure/caveadventure.h \
 		../Cave_Adventure/player.h \
 		../Cave_Adventure/world.h \
-		../Cave_Adventure/spielfeld.h
+		../Cave_Adventure/raum.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o caveadventure.o ../Cave_Adventure/caveadventure.cpp
 
 world.o: ../Cave_Adventure/world.cpp ../Cave_Adventure/world.h \
-		../Cave_Adventure/spielfeld.h
+		../Cave_Adventure/raum.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o world.o ../Cave_Adventure/world.cpp
 
-spielfeld.o: ../Cave_Adventure/spielfeld.cpp ../Cave_Adventure/spielfeld.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o spielfeld.o ../Cave_Adventure/spielfeld.cpp
+raum.o: ../Cave_Adventure/raum.cpp ../Cave_Adventure/raum.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o raum.o ../Cave_Adventure/raum.cpp
 
 ####### Install
 
