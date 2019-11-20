@@ -1,13 +1,17 @@
 #include "caveadventure.h"
 
-CaveAdventure::CaveAdventure()
+CaveAdventure::CaveAdventure(unsigned int  groesseSpielfeld)
+    :m_player("Chris", groesseSpielfeld), m_world(groesseSpielfeld)
 {
-//    Player player1;
-    World spielfwelt;
-    Player player2("Chris", 20);
-    while (player2.nextmove())
-    {
-    }
+nextMove();
+}
+
+void CaveAdventure::nextMove()
+{
+    while(1)
+    m_player.nextmove();
+    //UEBERPRUEF, OB NEXT MOVE MÖGLICH IST, ANSTATT DIE GROESSESPIELFELD IMMER ZU KOPIEREN UND IN JEDEM OBJEKT ZU SPEICHERN
+
 }
 
 CaveAdventure::~CaveAdventure()

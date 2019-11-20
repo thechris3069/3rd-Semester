@@ -4,7 +4,7 @@
 #include "world.h"
 #include "player.h"
 
-#define SPIELFELD 10
+//#define SPIELFELD 10
 
 using namespace std;
 

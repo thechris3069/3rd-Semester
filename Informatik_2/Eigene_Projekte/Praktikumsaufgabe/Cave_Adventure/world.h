@@ -6,11 +6,12 @@
 class World
 {
 public:
-    World();
-    Spielfeld m_groesseSpielfeld;
+    World(unsigned int groesseSpielfeld);
 
 private:
     std::string zuweisen();
+    std::string m_inhalt;
+    unsigned int reihe, spalte;
 };
 
 #endif // WORLD_H
