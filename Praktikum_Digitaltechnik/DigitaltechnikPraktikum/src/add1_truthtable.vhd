@@ -35,6 +35,12 @@ BEGIN
     outputs_s <=
     "00" WHEN "000",
     "10" WHEN "001",
+    "10" WHEN "010",
+    "01" WHEN "011",
+    "10" WHEN "100",
+    "01" WHEN "101",
+    "01" WHEN "110",
+    "11" WHEN "111",
     -- fill in the missing lines here
     -- ...
     "XX" WHEN OTHERS;

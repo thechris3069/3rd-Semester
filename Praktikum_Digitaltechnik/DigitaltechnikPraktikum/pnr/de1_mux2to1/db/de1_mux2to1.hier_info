@@ -6,10 +6,33 @@ LEDR <= mux2to1:DUT.y_o
 
 
 |de1_mux2to1|mux2to1:DUT
+a_i => and2gate:and2_gate_1.a_i
+b_i => and2gate:and2_gate_2.a_i
+sel_i => invgate:inv_gate_1.a_i
+sel_i => and2gate:and2_gate_1.b_i
+y_o <= or2gate:or2_gate_1.y_o
+
+
+|de1_mux2to1|mux2to1:DUT|invgate:inv_gate_1
+a_i => y_o.DATAIN
+y_o <= a_i.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|de1_mux2to1|mux2to1:DUT|and2gate:and2_gate_1
 a_i => y_o.IN0
-b_i => y_o.IN0
-sel_i => y_o.IN1
-sel_i => y_o.IN1
+b_i => y_o.IN1
+y_o <= y_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|de1_mux2to1|mux2to1:DUT|and2gate:and2_gate_2
+a_i => y_o.IN0
+b_i => y_o.IN1
+y_o <= y_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|de1_mux2to1|mux2to1:DUT|or2gate:or2_gate_1
+a_i => y_o.IN0
+b_i => y_o.IN1
 y_o <= y_o.DB_MAX_OUTPUT_PORT_TYPE
 
 

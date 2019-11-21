@@ -90,8 +90,8 @@ BEGIN
       bin_i      => a,
       segments_o => HEX0);
 
-  operand_b : binto7segment
-    PORT MAP (                    -- fill in the missing components here ...
+  --operand_b : binto7segment
+    --PORT MAP (                    -- fill in the missing components here ...
       
 
 
