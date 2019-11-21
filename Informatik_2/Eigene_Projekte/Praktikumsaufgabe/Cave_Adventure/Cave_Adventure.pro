@@ -7,10 +7,10 @@ SOURCES += main.cpp \
     player.cpp \
     caveadventure.cpp \
     world.cpp \
-    spielfeld.cpp
+    raum.cpp
 
 HEADERS += \
     player.h \
     caveadventure.h \
     world.h \
-    spielfeld.h
+    raum.h

@@ -7,9 +7,12 @@
 class CaveAdventure
 {
 public:
-    CaveAdventure();
-    Player m_player;
+    CaveAdventure(std::string spielername, unsigned int groesseSpielfeld = 15);
     ~CaveAdventure();
+    World m_world;
+    void nextMove();
+
+    Player m_player;
 private:
 };
 

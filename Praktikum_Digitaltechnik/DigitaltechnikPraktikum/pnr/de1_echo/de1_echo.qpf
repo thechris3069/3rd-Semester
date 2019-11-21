@@ -18,13 +18,21 @@
 #
 # Quartus II 32-bit
 # Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+<<<<<<< HEAD:Praktikum_Digitaltechnik/DigitaltechnikPraktikum/pnr/de1_mux2to1/de1_mux2to1.qpf
 # Date created = 20:05:51  November 21, 2019
+=======
+# Date created = 14:43:10  November 18, 2019
+>>>>>>> dfad3a895878084fad1ed381dfd1d8861bbdba10:Praktikum_Digitaltechnik/DigitaltechnikPraktikum/pnr/de1_echo/de1_echo.qpf
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "13.0"
+<<<<<<< HEAD:Praktikum_Digitaltechnik/DigitaltechnikPraktikum/pnr/de1_mux2to1/de1_mux2to1.qpf
 DATE = "20:05:51  November 21, 2019"
+=======
+DATE = "14:43:10  November 18, 2019"
+>>>>>>> dfad3a895878084fad1ed381dfd1d8861bbdba10:Praktikum_Digitaltechnik/DigitaltechnikPraktikum/pnr/de1_echo/de1_echo.qpf
 
 # Revisions
 
-PROJECT_REVISION = "de1_mux2to1"
+PROJECT_REVISION = "de1_echo"

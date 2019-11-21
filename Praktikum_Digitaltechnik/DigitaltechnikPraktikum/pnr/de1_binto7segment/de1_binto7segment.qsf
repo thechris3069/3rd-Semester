@@ -45,8 +45,6 @@ set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
-set_global_assignment -name VHDL_FILE ../../src/binto7segment_truthtable.vhd
-set_global_assignment -name VHDL_FILE ../../src/de1_binto7segment_structure.vhd
 set_location_assignment PIN_L22 -to SW[0]
 set_location_assignment PIN_L21 -to SW[1]
 set_location_assignment PIN_M22 -to SW[2]
