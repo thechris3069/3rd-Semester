@@ -80,13 +80,23 @@ BEGIN  -- tbench
 
     -- add your stimuli here ...
 
+  apply_stimuli('1', X"1", X"0");
+  apply_stimuli('1', X"1", X"1");
+  apply_stimuli('1', X"1", X"2");
+  apply_stimuli('1', X"0", X"2");
+  apply_stimuli('1', X"0", X"F");
+  
+  apply_stimuli('1', X"5", X"E");
+  
+  apply_stimuli('0', X"5", X"E");
+  
 	
     -- alternatively, a local procedure can be used to assign input values:
 	-----------------------------------------------------------------------
 --                  ci_i, b_i,    a_i
---    apply_stimuli('0', B"0000", X"0");
---    apply_stimuli('0', B"1111", X"0");
---    apply_stimuli('0', X"F",    X"0");
+    --apply_stimuli('0', B"0000", X"0");
+    --apply_stimuli('0', B"1111", X"0");
+    --apply_stimuli('0', X"F",    X"0");
 
     -- add your stimuli here ...
 

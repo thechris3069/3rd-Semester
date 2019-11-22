@@ -1,5 +1,5 @@
 Analysis & Synthesis report for de1_add4
-Thu Nov 21 21:59:27 2019
+Fri Nov 22 15:08:54 2019
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,9 +13,8 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
   7. General Register Statistics
-  8. Port Connectivity Checks: "add4:DUT|add1:inst3"
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  8. Elapsed Time Per Partition
+  9. Analysis & Synthesis Messages
 
 
 
@@ -41,13 +40,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 21 21:59:27 2019           ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 22 15:08:54 2019           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; de1_add4                                        ;
 ; Top-level Entity Name              ; de1_add4                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 14                                              ;
-;     Total combinational functions  ; 14                                              ;
+; Total logic elements               ; 30                                              ;
+;     Total combinational functions  ; 30                                              ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
 ; Total pins                         ; 47                                              ;
@@ -160,16 +159,16 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 14    ;
+; Estimated Total logic elements              ; 30    ;
 ;                                             ;       ;
-; Total combinational functions               ; 14    ;
+; Total combinational functions               ; 30    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 8     ;
-;     -- 3 input functions                    ; 5     ;
+;     -- 4 input functions                    ; 22    ;
+;     -- 3 input functions                    ; 7     ;
 ;     -- <=2 input functions                  ; 1     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 14    ;
+;     -- normal mode                          ; 30    ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 0     ;
@@ -178,10 +177,10 @@ applicable agreement for further details.
 ;                                             ;       ;
 ; I/O pins                                    ; 47    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; SW[1] ;
-; Maximum fan-out                             ; 10    ;
-; Total fan-out                               ; 70    ;
-; Average fan-out                             ; 1.15  ;
+; Maximum fan-out node                        ; SW[3] ;
+; Maximum fan-out                             ; 11    ;
+; Total fan-out                               ; 148   ;
+; Average fan-out                             ; 1.92  ;
 +---------------------------------------------+-------+
 
 
@@ -190,13 +189,15 @@ applicable agreement for further details.
 +------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Library Name ;
 +------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
-; |de1_add4                    ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |de1_add4                         ; work         ;
-;    |add4:DUT|                ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|add4:DUT                ; work         ;
+; |de1_add4                    ; 30 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |de1_add4                         ; work         ;
+;    |add4:DUT|                ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|add4:DUT                ; work         ;
 ;       |add1:inst0|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|add4:DUT|add1:inst0     ; work         ;
 ;       |add1:inst1|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|add4:DUT|add1:inst1     ; work         ;
-;       |add1:inst2|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|add4:DUT|add1:inst2     ; work         ;
-;       |add1:inst3|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|add4:DUT|add1:inst3     ; work         ;
+;       |add1:inst2|           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|add4:DUT|add1:inst2     ; work         ;
+;       |add1:inst3|           ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|add4:DUT|add1:inst3     ; work         ;
 ;    |binto7segment:operand_a| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|binto7segment:operand_a ; work         ;
+;    |binto7segment:operand_b| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|binto7segment:operand_b ; work         ;
+;    |binto7segment:operand_c| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de1_add4|binto7segment:operand_c ; work         ;
 +------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -216,15 +217,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "add4:DUT|add1:inst3"                                                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; co_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -240,7 +232,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Nov 21 21:59:22 2019
+    Info: Processing started: Fri Nov 22 15:08:51 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de1_add4 -c de1_add4
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add1_truthtable.vhd
@@ -256,41 +248,21 @@ Info (12021): Found 2 design units, including 1 entities, in source file /home/c
     Info (12022): Found design unit 1: de1_add4-structure
     Info (12023): Found entity 1: de1_add4
 Info (12127): Elaborating entity "de1_add4" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at de1_add4_structure.vhd(22): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at de1_add4_structure.vhd(23): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "add4" for hierarchy "add4:DUT"
-Warning (10541): VHDL Signal Declaration warning at add4_structure.vhd(21): used implicit default value for signal "co_o" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "add1" for hierarchy "add4:DUT|add1:inst0"
 Info (12128): Elaborating entity "binto7segment" for hierarchy "binto7segment:operand_a"
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDG[4]" is stuck at GND
-    Warning (13410): Pin "HEX1[0]" is stuck at GND
-    Warning (13410): Pin "HEX1[1]" is stuck at GND
-    Warning (13410): Pin "HEX1[2]" is stuck at GND
-    Warning (13410): Pin "HEX1[3]" is stuck at GND
-    Warning (13410): Pin "HEX1[4]" is stuck at GND
-    Warning (13410): Pin "HEX1[5]" is stuck at GND
-    Warning (13410): Pin "HEX1[6]" is stuck at GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND
-    Warning (13410): Pin "HEX2[1]" is stuck at GND
-    Warning (13410): Pin "HEX2[2]" is stuck at GND
-    Warning (13410): Pin "HEX2[3]" is stuck at GND
-    Warning (13410): Pin "HEX2[4]" is stuck at GND
-    Warning (13410): Pin "HEX2[5]" is stuck at GND
-    Warning (13410): Pin "HEX2[6]" is stuck at GND
-    Warning (13410): Pin "GPO_1[1]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_50"
-Info (21057): Implemented 61 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 77 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 37 output pins
-    Info (21061): Implemented 14 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 382 megabytes
-    Info: Processing ended: Thu Nov 21 21:59:27 2019
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info (21061): Implemented 30 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 374 megabytes
+    Info: Processing ended: Fri Nov 22 15:08:54 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 d/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/sim/add1
 Eadd1
-Z1 w1574354591
+Z1 w1574425889
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z4 d/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/sim/add1
@@ -15,7 +15,7 @@ L16
 VaRoOlA2ACQP7b?]7^@KMg2
 Z7 OV;C;10.1d;51
 33
-Z8 !s108 1574359887.126648
+Z8 !s108 1574426942.145652
 Z9 !s90 -reportprogress|300|-work|work|-2008|-explicit|/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add1_truthtable.vhd|
 Z10 !s107 /home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add1_truthtable.vhd|
 Z11 o-work work -2008 -explicit -O0
@@ -39,12 +39,12 @@ R11
 R12
 !i10b 1
 Et_add1
-Z13 w1574354592
+R1
 R2
 R3
 R4
-Z14 8/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add1.vhd
-Z15 F/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add1.vhd
+Z13 8/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add1.vhd
+Z14 F/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add1.vhd
 l0
 L18
 VZbiSBafl[Ud8IckoQ<moI1
@@ -52,24 +52,24 @@ VZbiSBafl[Ud8IckoQ<moI1
 R7
 33
 !i10b 1
-Z16 !s108 1574359887.170054
-Z17 !s90 -reportprogress|300|-work|work|-2008|-explicit|/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add1.vhd|
-Z18 !s107 /home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add1.vhd|
+Z15 !s108 1574426942.243068
+Z16 !s90 -reportprogress|300|-work|work|-2008|-explicit|/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add1.vhd|
+Z17 !s107 /home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add1.vhd|
 R11
 R12
 Atbench
 R2
 R3
-Z19 DEx4 work 6 t_add1 0 22 ZbiSBafl[Ud8IckoQ<moI1
+Z18 DEx4 work 6 t_add1 0 22 ZbiSBafl[Ud8IckoQ<moI1
 l45
 L23
-Z20 VS6bHi0<cA>MOO^G8]no611
-Z21 !s100 3Ie]UJdVLV_olDmKW9Ei83
+Z19 VS6bHi0<cA>MOO^G8]no611
+Z20 !s100 3Ie]UJdVLV_olDmKW9Ei83
 R7
 33
 !i10b 1
+R15
 R16
 R17
-R18
 R11
 R12

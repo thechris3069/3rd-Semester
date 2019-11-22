@@ -68,7 +68,8 @@ BEGIN
     PORT MAP(a_i   => a_i(3),
              b_i   => b_i(3),
              ci_i  => carry2,
-             sum_o => sum_o(3));
+             sum_o => sum_o(3),
+				     co_o => co_o);
       
 
 

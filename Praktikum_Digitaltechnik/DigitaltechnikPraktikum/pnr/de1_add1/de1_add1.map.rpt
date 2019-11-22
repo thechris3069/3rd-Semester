@@ -1,5 +1,5 @@
 Analysis & Synthesis report for de1_add1
-Thu Nov 21 19:16:03 2019
+Fri Nov 22 13:53:42 2019
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 21 19:16:03 2019           ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 22 13:53:42 2019           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; de1_add1                                        ;
 ; Top-level Entity Name              ; de1_add1                                        ;
@@ -223,7 +223,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Nov 21 19:15:58 2019
+    Info: Processing started: Fri Nov 22 13:53:38 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de1_add1 -c de1_add1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add1_truthtable.vhd
@@ -241,9 +241,9 @@ Info (21057): Implemented 7 device resources after synthesis - the final resourc
     Info (21059): Implemented 2 output pins
     Info (21061): Implemented 2 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 366 megabytes
-    Info: Processing ended: Thu Nov 21 19:16:03 2019
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 371 megabytes
+    Info: Processing ended: Fri Nov 22 13:53:42 2019
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
