@@ -15,11 +15,11 @@ public:
     void malemitFarbe(Color *Farbe);
     void getFarbe();
     void setFarbe(Color *farbe);
-    bool drawAt(int col, int val);
-    int getWidth()
+    bool drawAt(int col, int row, int val);
+    int getBrushWidth()
     {return m_xgroesse;
     }
-    int getHeight()
+    int getBrushHeight()
     {
         return m_ygroesse;
     } 
