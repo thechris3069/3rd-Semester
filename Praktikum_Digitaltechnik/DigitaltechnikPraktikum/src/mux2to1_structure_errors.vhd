@@ -19,9 +19,7 @@ ENTITY mux2to1 IS
 --        y_o   : OUT std_ulogic; -- kein ; nach letztem Signal
         y_o   : OUT std_ulogic
         );
---END mux21; Error (10396): VHDL syntax error at mux2to1_structure_errors.vhd(22): name used in construct must match previously specified name "mux2to1"
--- END mu2to1 Falsch geschrieben
-END mux2to1;
+END mux21;
 
 
 ARCHITECTURE structure OF mux2to1 IS
@@ -54,9 +52,7 @@ BEGIN
   and2_gate_1 : and2gate
     PORT MAP (
       a_i => a_i,
-      b_i => p2,
-		-- y_o => p2 Error (10500): VHDL syntax error at mux2to1_structure_errors.vhd(58) near text "y_o";  expecting ")", or ","
-		-- Komma an p2 vergessen
+      b_i => p2
       y_o => p0);
 
   and2_gate_2 : and2gate
@@ -72,9 +68,7 @@ BEGIN
       y_o => p3);
 
 
-END structure;
---END struct Error (10522): VHDL Syntax error at mux2to1_structure_errors.vhd(84): experienced unexpected end-of-file ;  expecting ";"
--- structure falsch geschrieben und Semikolon vergessen
+END struct
 
 
 -------------------------------------------------------------------------------
