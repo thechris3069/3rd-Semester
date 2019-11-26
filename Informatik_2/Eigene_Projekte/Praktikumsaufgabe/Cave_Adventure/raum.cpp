@@ -10,6 +10,8 @@ Raum::~Raum()
 
 }
 
+
+
 std::string Raum::getEntryText()
 {
 
