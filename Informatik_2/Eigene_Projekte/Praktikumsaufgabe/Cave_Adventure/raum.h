@@ -8,12 +8,15 @@ class Raum
 public:
     Raum();
     ~Raum();
-    std::string getEntryText();
+    virtual void getEntryText();
+protected:
+    std::string ausgabetext;
 };
 
 class RaumGold : public Raum
 {
 public:
+    int anzahlGold;
 RaumGold();
 ~RaumGold();
 };

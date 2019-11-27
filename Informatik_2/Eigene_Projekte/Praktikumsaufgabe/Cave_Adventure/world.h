@@ -8,13 +8,15 @@ class World
 {
 public:
     World(unsigned int groesseSpielfeld);
+            Raum ***raumBasisKlasse;
 protected:
-        Raum ***raumBasisKlasse;
+
             void raumzuweisen();
+            Raum* zufallsraum(Raum raum[]);
 private:
 
 
-    std::string m_inhalt;
+//    std::string m_inhalt;
     const unsigned int m_reihe, m_spalte;
     unsigned int m_startreihe, m_startspalte;
 };

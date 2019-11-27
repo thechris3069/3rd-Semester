@@ -13,6 +13,10 @@ public:
     void nextMove();
 
     Player m_player;
+
+protected:
+    void goldraum();
+    void kreatur();
 private:
 };
 
