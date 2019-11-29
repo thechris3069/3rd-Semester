@@ -11,11 +11,26 @@ Raum::~Raum()
 
 }
 
+void Raum::interagieremitSpieler(Player *p)
+{
+
+}
+
 RaumEINGANG::RaumEINGANG()
 {
     ausgabetext = "Willkommen im Eingangsraum";
 //        getEntryText();
 }
+
+RaumEINGANG::~RaumEINGANG()
+{
+
+}
+
+// void RaumEINGANG::interagieremitSpieler(Player *p)
+//{
+//    std::cout << "Interaktion des Eingangs" << std::endl;
+//}
 
 RaumGold::RaumGold()
 {
@@ -24,10 +39,25 @@ RaumGold::RaumGold()
 //        getEntryText();
 }
 
+void RaumGold::interagieremitSpieler(Player *p)
+{
+   std::cout << "Interaktion des Eingangs" << std::endl;
+}
+
+RaumGold::~RaumGold()
+{
+
+}
+
 RaumHaendler::RaumHaendler()
 {
     ausgabetext = "Ich verkaufe ";
 //        getEntryText();
+}
+
+RaumHaendler::~RaumHaendler()
+{
+
 }
 
 RaumKreatur::RaumKreatur()
@@ -36,16 +66,32 @@ RaumKreatur::RaumKreatur()
 //        getEntryText();
 }
 
+RaumKreatur::~RaumKreatur()
+{
+
+}
+
+
+
 RaumEXIT::RaumEXIT()
 {
     ausgabetext = "Ausgang, endlich geschafft";
 //        getEntryText();
 }
 
+RaumEXIT::~RaumEXIT()
+{
+
+}
+
 RaumLEER::RaumLEER()
 {
     ausgabetext = "Leerer Ram";
 //        getEntryText();
+}
+RaumLEER::~RaumLEER()
+{
+
 }
 
 void Raum::getEntryText()

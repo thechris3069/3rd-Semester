@@ -17,6 +17,9 @@ public:
     public:
         unsigned int reihe, spalte;
     };
+
+    void zeigeStatus() const;
+
     int getPositionReihe() const
     {
         return m_position.reihe;
@@ -37,7 +40,8 @@ public:
         void showinventory() const;
          void ausgabe() const;
          bool verringereLeben(int anzahl_lebenspunkte);
-         bool verringereGold(int anzahl_goldstuecke);
+//         void veraendereGold()(int anzahl_goldstuecke);
+         bool nehmeGold();
 
 
 private:

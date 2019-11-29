@@ -2,15 +2,19 @@
 #define RAUM_H
 
 #include <iostream>
+#include "player.h"
 
 class Raum
 {
 public:
     Raum();
-    ~Raum();
+    virtual ~Raum();
     virtual void getEntryText();
+    virtual void interagieremitSpieler(Player *p);
+
 protected:
     std::string ausgabetext;
+
 };
 
 class RaumGold : public Raum
@@ -19,6 +23,7 @@ public:
     int anzahlGold;
 RaumGold();
 ~RaumGold();
+void interagieremitSpieler(Player *p);
 };
 
 class RaumHaendler : public Raum
@@ -33,6 +38,7 @@ class RaumKreatur : public Raum
     public:
 RaumKreatur();
 ~RaumKreatur();
+//void interagieremitSpieler(Player *p);
 };
 
 class RaumEXIT : public Raum
@@ -47,6 +53,7 @@ class RaumEINGANG : public Raum
     public:
 RaumEINGANG();
 ~RaumEINGANG();
+
 };
 
 class RaumLEER : public Raum

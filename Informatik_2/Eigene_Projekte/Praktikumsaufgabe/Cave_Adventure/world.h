@@ -3,12 +3,17 @@
 #include <iostream>
 #include <cstdlib>
 #include "raum.h"
+//#include "player.h"
 
 class World
 {
 public:
     World(unsigned int groesseSpielfeld);
             Raum ***raumBasisKlasse;
+            Raum* getRaum(int zeile,int spalte)
+            {
+                return raumBasisKlasse[zeile][spalte];
+            }
 protected:
 
             void raumzuweisen();
