@@ -1,0 +1,26 @@
+## ----------------------------------------------------------------------------
+## Script     : makefile.sources
+## ----------------------------------------------------------------------------
+## Author     : Johann Faerber
+## Company    : University of Applied Sciences Augsburg
+## ----------------------------------------------------------------------------
+## Description: provide all the VHDL source files in the variable SYN_SOURCE_FILES
+##              Attention !!!
+##              -------------
+##              Do not forget a new line after the final source file !
+## ----------------------------------------------------------------------------
+
+SYN_SOURCE_FILES = \
+../../src/traffic_light_qfsm.vhd \
+../../src/d_ff_rtl.vhd \
+../../src/dreg_structure.vhd \
+../../src/add1_truthtable.vhd \
+../../src/add4_structure.vhd \
+../../src/cntdnld_structure.vhd \
+../../src/traffic_light_phase_cnt_structure.vhd \
+../../src/cntdnmodm_rtl.vhd \
+
+
+
+# do not delete this line
+# -----------------------------------------------------------------------------

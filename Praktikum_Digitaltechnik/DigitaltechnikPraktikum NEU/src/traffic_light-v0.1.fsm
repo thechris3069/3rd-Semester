@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<!DOCTYPE qfsmproject SYSTEM 'qfsm.dtd'>
+<qfsmproject version="0.52" author="Qfsm">
+  <machine nummooreout="3" transfontitalic="0" draw_it="1" statefontsize="8" transfont="Helvetica" statefontitalic="0" author="H.F." description="FSM of a traffic light&#xa;0.1: first simple version with 4 states and 3 light outputs,&#xa;including one next phase enable signal next_phase_en_pi" version="0.1" name="traffic_light" arrowtype="1" numbits="1" statefontweight="50" statefont="Helvetica" numin="1" transfontsize="8" transfontweight="50" type="0" numout="0" initialstate="1">
+    <outputnames_moore>red_o,yellow_o,green_o</outputnames_moore>
+    <inputnames>next_phase_en_pi</inputnames>
+    <outputnames></outputnames>
+    <itransition ypos="117" endx="125" xpos="65" endy="117"/>
+    <state pencolor="11141120" radius="40" description="" finalstate="1" moore_outputs="100" ypos="117" code="1" xpos="165" linewidth="1">red_state</state>
+    <transition c1x="137.1722013051466" c2y="50.92682073280153" c1y="0.2711962718767893" description="" straight="1" type="0" ypos="77.01542317389126" endx="191.5524228648974" xpos="166.1106826896141" endy="87.08397018313303" c2x="265.1715277986947">
+      <from>1</from>
+      <to>1</to>
+      <inputs default="0" any="0" invert="0">0</inputs>
+      <outputs></outputs>
+    </transition>
+  </machine>
+</qfsmproject>

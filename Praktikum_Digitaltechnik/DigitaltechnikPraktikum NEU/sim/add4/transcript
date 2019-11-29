@@ -1,0 +1,13 @@
+# project open add4 
+# Loading project add4
+#  vsim work.t_add4(tbench) 
+# vsim work.t_add4(tbench) 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.t_add4(tbench)
+# Loading work.add4(structure)
+# Loading work.add1(truthtable)
+#  add wave * 
+#  run -a 
+#  

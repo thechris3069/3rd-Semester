@@ -1,0 +1,24 @@
+# project open cnt4up 
+# Loading project cnt4up
+#  vsim work.t_cnt4up(tbench) 
+# vsim work.t_cnt4up(tbench) 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.t_cnt4up(tbench)
+# Loading work.cnt4up(structure)
+# Loading work.add4(structure)
+# Loading work.add1(truthtable)
+# Loading work.dreg(structure)
+# Loading work.d_ff(rtl)
+#  add wave * 
+#  run -a 
+#  
+# Compile of d_ff_rtl.vhd was successful.
+# Compile of dreg_structure.vhd was successful.
+# Compile of add1_truthtable.vhd was successful.
+# Compile of add4_structure.vhd was successful.
+# Compile of cnt4up_structure.vhd was successful.
+# Compile of t_cnt4up.vhd was successful.
+# 6 compiles, 0 failed with no errors. 
+quit -sim

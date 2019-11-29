@@ -1,0 +1,111 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/sim/add4
+Eadd1
+Z1 w1574425889
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 d/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/sim/add4
+Z5 8/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add1_truthtable.vhd
+Z6 F/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add1_truthtable.vhd
+l0
+L16
+VaRoOlA2ACQP7b?]7^@KMg2
+Z7 OV;C;10.1d;51
+33
+Z8 !s108 1574684966.894291
+Z9 !s90 -reportprogress|300|-work|work|-2008|-explicit|/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add1_truthtable.vhd|
+Z10 !s107 /home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add1_truthtable.vhd|
+Z11 o-work work -2008 -explicit -O0
+Z12 tExplicit 1
+!s100 a_N8oUJRXk46z^g9Wbd;O2
+!i10b 1
+Atruthtable
+R2
+R3
+DEx4 work 4 add1 0 22 aRoOlA2ACQP7b?]7^@KMg2
+l30
+L25
+V]R@OAKT@<KeK@RHe`ZO?R2
+R7
+33
+R8
+R9
+R10
+R11
+R12
+!s100 jdHViiH674XgL=_UO=?c41
+!i10b 1
+Eadd4
+Z13 w1574431564
+R2
+R3
+R4
+Z14 8/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add4_structure.vhd
+Z15 F/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add4_structure.vhd
+l0
+L16
+V5`R3LS5GGaQ9ojG5Vk?z90
+R7
+33
+Z16 !s108 1574684967.031544
+Z17 !s90 -reportprogress|300|-work|work|-2008|-explicit|/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add4_structure.vhd|
+Z18 !s107 /home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/add4_structure.vhd|
+R11
+R12
+!s100 MJZ`d10i][kR^CD_i?ceF3
+!i10b 1
+Astructure
+R2
+R3
+Z19 DEx4 work 4 add4 0 22 5`R3LS5GGaQ9ojG5Vk?z90
+l42
+L25
+VaIEjN^VfNX@ijLH7a96:Q1
+R7
+33
+R16
+R17
+R18
+R11
+R12
+!s100 fTXEIPe>Tf_cAW11kREd;1
+!i10b 1
+Et_add4
+Z20 w1574431566
+R2
+R3
+R4
+Z21 8/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add4.vhd
+Z22 F/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add4.vhd
+l0
+L17
+V1P37G^ZTTFj[=S>?Q40bo1
+!s100 F<7o[XUbFGgG9b9APlH8S0
+R7
+33
+!i10b 1
+Z23 !s108 1574684967.092936
+Z24 !s90 -reportprogress|300|-work|work|-2008|-explicit|/home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add4.vhd|
+Z25 !s107 /home/caeuser/Desktop/GIT/3rd-Semester/Praktikum_Digitaltechnik/DigitaltechnikPraktikum/src/t_add4.vhd|
+R11
+R12
+Atbench
+R19
+R2
+R3
+DEx4 work 6 t_add4 0 22 1P37G^ZTTFj[=S>?Q40bo1
+l43
+L22
+V^RRo1^6HL`Ra_zY@iblOX1
+!s100 gYG<]`B[Glg5i[US<3F@O0
+R7
+33
+!i10b 1
+R23
+R24
+R25
+R11
+R12

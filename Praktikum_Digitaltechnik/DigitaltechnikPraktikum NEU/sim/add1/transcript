@@ -1,0 +1,16 @@
+# project open add1 
+# Loading project add1
+vsim work.t_add1
+# vsim work.t_add1 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.t_add1(tbench)
+# Loading work.add1(truthtable)
+# Compile of add1_truthtable.vhd was successful.
+# Compile of t_add1.vhd was successful.
+# 2 compiles, 0 failed with no errors. 
+# Compile of add1_truthtable.vhd was successful.
+# Compile of t_add1.vhd was successful.
+add wave -position insertpoint sim:/t_add1/*
+run -all
