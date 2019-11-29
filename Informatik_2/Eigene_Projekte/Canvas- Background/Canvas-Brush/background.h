@@ -16,7 +16,7 @@ private:
     unsigned int size_y;
     unsigned int arraylength;
     uint8_t *pixelval;
-    void setPixelWithBrush(int, int);
+    void setPixelWithBrush(int row, int col);
     void setPixel(int row, int col, Color c);
     int saveAsBmp(uint8_t bilddaten[], int b, int h);
     int saveAsPpm(uint8_t bilddaten[], int b, int h);

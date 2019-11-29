@@ -17,6 +17,21 @@ public:
     public:
         unsigned int reihe, spalte;
     };
+
+    void zeigeStatus() const;
+
+    int getPositionReihe() const
+    {
+        return m_position.reihe;
+    }
+    int getPositionSpalte() const
+    {
+        return m_position.spalte;
+    }
+    int getPLayerHealth() const
+    {
+        return m_anzahl_health;
+    }
  const uint8_t m_groesseSpielfeld;
 //    Player(const uint8_t groesseSpielfeld =15);
     Player(const std::string name = "player1", const uint8_t groesseSpielfeld = 15);
@@ -24,6 +39,10 @@ public:
         bool nextmove();
         void showinventory() const;
          void ausgabe() const;
+         bool verringereLeben(int anzahl_lebenspunkte);
+//         void veraendereGold()(int anzahl_goldstuecke);
+         bool nehmeGold();
+
 
 private:
 
@@ -31,7 +50,8 @@ private:
     void initpos(uint8_t);
     bool move();
     void geheEinFeld(const int x, const int y, const int anzahl_schritte = 1);
-        struct Position m_position;
+         struct Position m_position;
+
 
 
 uint8_t m_anzahl_gold;

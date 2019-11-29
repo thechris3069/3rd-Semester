@@ -79,12 +79,12 @@ int main()
     Color weiss("weiß");
     Color schwarz("schwarz");
     Color grau(100,100,100);
-    Background pictureOne(&gelb,100, 100);
+    Background pictureOne(&gelb, 100, 100);
     pictureOne.setPinsel(&b);
     b.malemitFarbe(&rot);
-    pictureOne.drawline(10,180,100,100); //Pinsel wird als STD gesetzt, obwohl ein Pinsel erstellt wurde
+    pictureOne.drawline(0,10,20,80); //HOEHE ANFANG, HOEHE ENDE, BREITE ANFANG, BREITE ENDE
     b.setFarbe(&weiss);
-    pictureOne.drawline(10,20,100,120);
+    pictureOne.drawline(10,50,50,60);
     savePicture(pictureOne);
 
     return 0;

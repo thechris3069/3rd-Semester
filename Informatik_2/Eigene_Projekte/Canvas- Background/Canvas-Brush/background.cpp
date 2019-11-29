@@ -65,8 +65,9 @@ void Background::drawline(int startrow, int endrow, int startcol, int endcol)
     {
         for(int col = startcol; col <=endcol; ++col)
         {
-//            setPixelWithBrush(m_currenBrush->getHeight(), m_currenBrush->getWidth());
-            setPixel(row, col, *(m_currenBrush->m_currentColor));
+
+            setPixelWithBrush(row,col);
+//            setPixel(row, col, *(m_currenBrush->m_currentColor));
         }
     }
 }
@@ -91,20 +92,32 @@ Brush* Background::getPinsel()
 
 void Background::setPixel(int row, int col, Color c)
 {
+
     pixelval[(row*size_x+col)*3+0] = berechnealphafarbe(pixelval[(row*size_x+col)*3+0], c.getRed(), c.getalpha());
     pixelval[(row*size_x+col)*3+1] =  berechnealphafarbe(pixelval[(row*size_x+col)*3+1], c.getGreen(), c.getalpha());
     pixelval[(row*size_x+col)*3+2] =  berechnealphafarbe(pixelval[(row*size_x+col)*3+2], c.getBlue(), c.getalpha());
 }
 
-//void Background::setPixelWithBrush(m_currenBrush) //TODO: noch ausarbeiten
-//{
+void Background::setPixelWithBrush(int row, int col) //TODO: noch ausarbeiten
+{
+//Zugriff sicherstelleen, dass im feld geschrieben weird
 
-//    m_currenBrush->getHeight();
-//    m_currenBrush->getWidth();
-//    for(int i = 0; i < heigth; i++)
-//        for(int j=0j <width; j++)
-//    m_currenBrush->drawAt();
-//}
+    int brushHoehe =  m_currenBrush->getBrushHeight();
+    int brushBreite =  m_currenBrush->getBrushWidth();
+    int maleanPositionCol = col - brushHoehe/2;
+    int maleanPositionRow = row -brushBreite/2;
+    for(int aktuellebreite = 0; aktuellebreite < brushBreite; aktuellebreite++)
+    {
+        if((maleanPositionCol+aktuellebreite < 0) || (maleanPositionCol+aktuellebreite > getSize_x()))
+            break;
+        for(int aktuellehoehe=0; aktuellehoehe < brushHoehe; aktuellehoehe++)
+        {
+            if((maleanPositionRow+aktuellehoehe < 0) || (maleanPositionRow+aktuellehoehe > getSize_y()))
+                break;
+            setPixel(maleanPositionRow+aktuellebreite, maleanPositionCol+aktuellehoehe, *(m_currenBrush->m_currentColor));
+        }
+    }
+}
 
 void Background::save()
 {

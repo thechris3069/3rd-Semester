@@ -26,11 +26,12 @@ Player::~Player()
 void Player::ausgabe() const
 {
 //    unsigned int reihe, spalte;
-    cout << m_name << endl;
-    cout << "Leben: " << static_cast<int>(m_anzahl_health) << endl;
-    cout << "Rüstung: " << static_cast<int>(m_anzahl_armor) <<endl;
-    cout << "Gold: " << static_cast<int>(m_anzahl_gold) <<endl;
+//    cout << m_name << endl;
+//    cout << "Leben: " << static_cast<int>(m_anzahl_health) << endl;
+//    cout << "Rüstung: " << static_cast<int>(m_anzahl_armor) <<endl;
+//    cout << "Gold: " << static_cast<int>(m_anzahl_gold) <<endl;
     cout << "Sie sind in der Reihe " << m_position.reihe +1 << " und Spalte " << m_position.spalte +1 << endl;
+
     cout << endl << endl;
 }
 
@@ -38,8 +39,16 @@ bool Player::nextmove()
 {
     bool schrittmoeglich = false;
     schrittmoeglich = move();
-    ausgabe();
+//    ausgabe();
     return schrittmoeglich;
+}
+
+void Player::zeigeStatus() const
+{
+    cout << m_name << endl;
+    cout << "Leben: " << static_cast<int>(m_anzahl_health) << endl;
+    cout << "Rüstung: " << static_cast<int>(m_anzahl_armor) <<endl;
+    cout << "Gold: " << static_cast<int>(m_anzahl_gold) <<endl;
 }
 
 bool Player::move()
@@ -94,7 +103,7 @@ void Player::geheEinFeld(const  int x, const int y, const int anzahl_schritte)
     {
         if((m_position.spalte < m_groesseSpielfeld-anzahl_schritte && x > 0))
             m_position.spalte += anzahl_schritte;
-        else if (m_position.spalte > 0+anzahl_schritte
+        else if (m_position.spalte >= 0+anzahl_schritte
                  && x < 0)
             m_position.spalte -=anzahl_schritte;
         else
@@ -111,6 +120,47 @@ void Player::geheEinFeld(const  int x, const int y, const int anzahl_schritte)
             cout << "Ende des Spielfelds erreicht" << endl;
     }
 }
+
+
+//bool Player::verringereGold(int anzahl_goldstuecke)
+//{
+//    if (anzahl_goldstuecke >= m_anzahl_gold)
+//    {
+//        return false;
+//    }
+//    else
+//        m_anzahl_gold -= anzahl_goldstuecke;
+//    return true;
+//}
+
+//void Player::veraendereGold(int anzahl_goldstuecke)
+//{
+//    char eingabe;
+//    std::cout << "moechsten Sie das Gold mitnehmen? Interaktion mit E, WASD  fuer Weitergehen" << std::endl;
+//    std::cin >> eingabe;
+//    cin.ignore(INT_MAX, '\n');
+//    eingabe = toupper(eingabe);
+//    if  (eingabe == 'E')
+//    {
+////        m_anzahl_gold += Gold aus Godraum;
+//    }
+
+//}
+
+bool Player::verringereLeben(int anzahl_lebenspunkte)
+{
+    if(m_anzahl_health > anzahl_lebenspunkte)
+    {
+        m_anzahl_health -= anzahl_lebenspunkte;
+        return true;
+    }
+    else
+    {
+        std::cout << "Game over" << std::endl;
+        return false;
+    }
+}
+
 
 void Player::showinventory() const
 {
