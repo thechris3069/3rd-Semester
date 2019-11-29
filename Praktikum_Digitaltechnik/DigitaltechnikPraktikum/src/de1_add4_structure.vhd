@@ -33,6 +33,10 @@ END de1_add4;
 
 ARCHITECTURE structure OF de1_add4 IS
 
+
+		
+
+
   COMPONENT binto7segment
     PORT (
       bin_i      : IN  std_ulogic_vector(3 DOWNTO 0);
@@ -59,10 +63,10 @@ BEGIN
   -- Modifications for measurement of longest path through module
   GPO_1(0) <= ci;
   GPO_1(1) <= co;
-  -- ci       <= CLOCK_50;               -- uncommend if connected by SW(0)
+  ci       <= CLOCK_50;               -- uncommend if connected by SW(0)
   
   -- connecting switches to operands
-  ci <= SW(0);                        -- uncomment, if connected by CLOCK_50
+  --ci <= SW(0);                        -- uncomment, if connected by CLOCK_50
   a  <= SW(4 DOWNTO 1);
   b  <= SW(8 DOWNTO 5);
 

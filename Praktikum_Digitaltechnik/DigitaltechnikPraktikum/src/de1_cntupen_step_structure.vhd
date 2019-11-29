@@ -67,18 +67,30 @@ BEGIN
   -- enable signal en_pi has to be connected via a rising edge detector
   single_pulse_generator : ENTITY work.rising_edge_detector(structure)
     PORT MAP (
+	 x_i => long_pulse,
+	 clk_i => clk_i,
+	 rst_ni => rst_ni,
+	 rise_o => en_pi);
+	 
       -- insert port mappings here
 
       
   -- connecting device under test with peripheral elements
   DUT : ENTITY work.cntupen(structure)
     PORT MAP (
+	 en_pi => en_pi,
+	 clk_i => clk_i,
+	 rst_ni => rst_ni,
+	 count_o => count_o);
       -- insert port mappings here
 
       
   -- connecting count value to HEX display
   count_value : ENTITY work.binto7segment(truthtable)
     PORT MAP (
+	 bin_i => count_o,
+	 segments_o => HEX0);
+	 
       -- insert port mappings here
 
       

@@ -21,6 +21,8 @@ ENTITY rising_edge_detector IS
     clk_i  : IN  std_ulogic;
     rst_ni : IN  std_ulogic;
     x_i    : IN  std_ulogic;
+  --  new_i    : IN  std_ulogic;
+    --new_o    : OUT  std_ulogic;
     rise_o : OUT std_ulogic
     );
 END rising_edge_detector;
@@ -53,8 +55,9 @@ BEGIN
       d_i    => q0,
       q_o    => q1);
 
-  output_logic : rise_o <= q0;          -- <- fill in correct equation here
-
+  output_logic : rise_o <= NOT q1 AND q0;          -- <- fill in correct equation here
+ -- output_logic : new_o <= q1 AND new_i;
+  
 END structure;
 
 -------------------------------------------------------------------------------

@@ -45,15 +45,27 @@ ARCHITECTURE structure OF cntupen IS
   
 BEGIN
 
+--  incrementer : ENTITY work.add4(structure)
+  --  PORT MAP (
+      -- insert port mappings here
+        
   incrementer : ENTITY work.add4(structure)
     PORT MAP (
-      -- insert port mappings here
-
+      a_i   => B"0001",
+      b_i   => current_state,
+      ci_i  => '0',
+      sum_o => next_state,
+      co_o  => OPEN);
       
-  state_register : ENTITY work.dregen(rtl)
+      
+        state_register : ENTITY work.dregen(rtl)
     PORT MAP (
-      -- insert port mappings here
-
+      clk_i  => clk_i,
+      rst_ni => rst_ni,
+      en_pi => en_pi,
+      d_i    => next_state,
+      q_o    => current_state);
+      
       
   counter_output : count_o <= current_state;
 

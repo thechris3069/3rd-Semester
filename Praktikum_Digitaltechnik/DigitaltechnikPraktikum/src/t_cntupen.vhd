@@ -68,6 +68,20 @@ BEGIN  -- tbench
                                         -- ... is deactivated
 
     en_pi <= '1';                       -- activate enable input en_pi
+    --rst_ni <= '0';    
+     
+    WAIT UNTIL count_o = B"0000";  
+    
+    
+    WAIT FOR 5 * period;
+    
+    en_pi <= '0';
+    
+    WAIT FOR 3 * period;
+    
+    en_pi <= '1';
+    
+    WAIT UNTIL count_o = B"0000";
 
                    -- wait for at least one count cycle
 
@@ -86,6 +100,10 @@ BEGIN  -- tbench
   END PROCESS;
   
 END tbench;
+
+
+
+  -- initial reset, always necessary at the beginning of a simulation
 
 -------------------------------------------------------------------------------
 -- Revisions:

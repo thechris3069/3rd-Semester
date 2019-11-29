@@ -65,7 +65,7 @@ BEGIN  -- tbench
                                         -- ... is deactivated
 
  
-    WAIT FOR 15 * period;               -- wait for at least one count cycle
+    WAIT FOR 30 * period;               -- wait for at least one count cycle
 
 
  

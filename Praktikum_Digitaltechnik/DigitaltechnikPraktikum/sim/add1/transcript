@@ -1,23 +1,5 @@
 # project open add1 
 # Loading project add1
-# Compile of add1_truthtable.vhd was successful.
-# Compile of t_add1.vhd was successful.
-vsim -do {project open add1} -i work.t_add1(tbench)
-# vsim -do {project open add1} -i work.t_add1(tbench) 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.t_add1(tbench)
-# Loading work.add1(truthtable)
-# project open add1 
-vsim -do {project open add1} -i work.t_add1(tbench)
-# vsim -do {project open add1} -i work.t_add1(tbench) 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.t_add1(tbench)
-# Loading work.add1(truthtable)
-# project open add1 
 vsim work.t_add1
 # vsim work.t_add1 
 # Loading std.standard
@@ -25,8 +7,10 @@ vsim work.t_add1
 # Loading ieee.std_logic_1164(body)
 # Loading work.t_add1(tbench)
 # Loading work.add1(truthtable)
-add wave sim:/t_add1/*
-# Load canceled
-run -all
-add wave -position end  sim:/t_add1/MUV/outputs_s(1)
+# Compile of add1_truthtable.vhd was successful.
+# Compile of t_add1.vhd was successful.
+# 2 compiles, 0 failed with no errors. 
+# Compile of add1_truthtable.vhd was successful.
+# Compile of t_add1.vhd was successful.
+add wave -position insertpoint sim:/t_add1/*
 run -all

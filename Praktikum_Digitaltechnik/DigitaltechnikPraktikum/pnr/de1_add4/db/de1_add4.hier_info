@@ -1,6 +1,4 @@
 |de1_add4
-SW[0] => add4:DUT.ci_i
-SW[0] => GPO_1[0].DATAIN
 SW[0] => LEDR[0].DATAIN
 SW[1] => add4:DUT.a_i[0]
 SW[1] => binto7segment:operand_a.bin_i[0]
@@ -61,8 +59,9 @@ HEX2[3] <= binto7segment:operand_c.segments_o[3]
 HEX2[4] <= binto7segment:operand_c.segments_o[4]
 HEX2[5] <= binto7segment:operand_c.segments_o[5]
 HEX2[6] <= binto7segment:operand_c.segments_o[6]
-CLOCK_50 => ~NO_FANOUT~
-GPO_1[0] <= SW[0].DB_MAX_OUTPUT_PORT_TYPE
+CLOCK_50 => add4:DUT.ci_i
+CLOCK_50 => GPO_1[0].DATAIN
+GPO_1[0] <= CLOCK_50.DB_MAX_OUTPUT_PORT_TYPE
 GPO_1[1] <= add4:DUT.co_o
 
 

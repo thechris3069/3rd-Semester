@@ -1,86 +1,13 @@
 # project open add4 
 # Loading project add4
-vsim work.t_add4
-# vsim work.t_add4 
+#  vsim work.t_add4(tbench) 
+# vsim work.t_add4(tbench) 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading work.t_add4(tbench)
 # Loading work.add4(structure)
 # Loading work.add1(truthtable)
-# ** Warning: (vsim-8683) Uninitialized out port /t_add4/DUT/co_o has no driver.
-# This port will contribute value (U) to the signal network.
-# Compile of add1_truthtable.vhd was successful.
-# Compile of add4_structure.vhd was successful.
-# Compile of t_add4.vhd was successful.
-add wave -position insertpoint sim:/t_add4/*
-run -all
-run -all
-# Compile of add1_truthtable.vhd was successful.
-# Compile of add4_structure.vhd was successful.
-# Compile of t_add4.vhd was successful.
-restart -f
-# Loading work.t_add4(tbench)
-# Loading work.add4(structure)
-# Loading work.add1(truthtable)
-# ** Warning: (vsim-8683) Uninitialized out port /t_add4/DUT/co_o has no driver.
-# This port will contribute value (U) to the signal network.
-run -all
-# Compile of add1_truthtable.vhd was successful.
-# Compile of add4_structure.vhd was successful.
-# Compile of t_add4.vhd was successful.
-# Compile of add1_truthtable.vhd was successful.
-# Compile of add4_structure.vhd was successful.
-# Compile of t_add4.vhd was successful.
-# 3 compiles, 0 failed with no errors. 
-run -all
-quit -sim
-# Compile of add1_truthtable.vhd was successful.
-# Compile of add4_structure.vhd was successful.
-# Compile of t_add4.vhd was successful.
-vsim work.t_add4
-# vsim work.t_add4 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.t_add4(tbench)
-# Loading work.add4(structure)
-# Loading work.add1(truthtable)
-# ** Warning: (vsim-8683) Uninitialized out port /t_add4/DUT/co_o has no driver.
-# This port will contribute value (U) to the signal network.
-add wave -position insertpoint sim:/t_add4/*
-run -all
-restart -f
-# ** Warning: (vsim-8683) Uninitialized out port /t_add4/DUT/co_o has no driver.
-# This port will contribute value (U) to the signal network.
-# Compile of add1_truthtable.vhd was successful.
-# Compile of add4_structure.vhd was successful.
-# Compile of t_add4.vhd was successful.
-# 3 compiles, 0 failed with no errors. 
-run -all
-# Compile of add1_truthtable.vhd was successful.
-# Compile of add4_structure.vhd was successful.
-# Compile of t_add4.vhd was successful.
-# 3 compiles, 0 failed with no errors. 
-run -all
-restart -f
-# Loading work.t_add4(tbench)
-# Loading work.add4(structure)
-# Loading work.add1(truthtable)
-run -all
-step -current
-run -all
-# Compile of add1_truthtable.vhd was successful.
-# Compile of add4_structure.vhd was successful.
-# Compile of t_add4.vhd was successful.
-# 3 compiles, 0 failed with no errors. 
-run -all
-# Compile of add1_truthtable.vhd was successful.
-# Compile of add4_structure.vhd was successful.
-# Compile of t_add4.vhd was successful.
-# 3 compiles, 0 failed with no errors. 
-restart -f
-# Loading work.t_add4(tbench)
-# Loading work.add4(structure)
-# Loading work.add1(truthtable)
-run -all
+#  add wave * 
+#  run -a 
+#  
