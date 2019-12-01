@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
--- Module     : t_rising_edge_detector
+-- Module     : t_cntdn
 -------------------------------------------------------------------------------
 -- Author     :   <haf@fh-augsburg.de>
 -- Company    : University of Applied Sciences Augsburg
 -- Copyright (c) 2011   <haf@fh-augsburg.de>
 -------------------------------------------------------------------------------
--- Description: Testbench for design "rising_edge_detector"
+-- Description: Testbench for design "cntdn"
 -------------------------------------------------------------------------------
 -- Revisions  : see end of file
 -------------------------------------------------------------------------------
@@ -13,21 +13,18 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
--------------------------------------------------------------------------------
+ENTITY t_cntdn IS
+END t_cntdn;
 
-ENTITY t_rising_edge_detector IS
-END t_rising_edge_detector;
+ARCHITECTURE tbench OF t_cntdn IS
 
--------------------------------------------------------------------------------
-
-ARCHITECTURE tbench OF t_rising_edge_detector IS
-
-  COMPONENT rising_edge_detector
+  COMPONENT cntdn
     PORT (
-      clk_i  : IN  std_ulogic;
-      rst_ni : IN  std_ulogic;
-      x_i    : IN  std_ulogic;
-      rise_o : OUT std_ulogic);
+      clk_i   : IN  std_ulogic;
+      rst_ni  : IN  std_ulogic;
+      en_pi   : IN  std_ulogic;
+      count_o : OUT std_ulogic_vector(3 DOWNTO 0);
+      tc_o    : OUT std_ulogic);
   END COMPONENT;
 
   -- definition of a clock period
@@ -36,23 +33,25 @@ ARCHITECTURE tbench OF t_rising_edge_detector IS
   SIGNAL clken_p  : boolean := true;
 
   -- component ports
-  SIGNAL clk_i  : std_ulogic;
-  SIGNAL rst_ni : std_ulogic;
-  SIGNAL x_i    : std_ulogic;
-  SIGNAL rise_o : std_ulogic;
-
+  SIGNAL clk_i   : std_ulogic;
+  SIGNAL rst_ni  : std_ulogic;
+  SIGNAL en_pi   : std_ulogic;
+  SIGNAL count_o : std_ulogic_vector(3 DOWNTO 0);
+  SIGNAL tc_o    : std_ulogic;
+  
 BEGIN  -- tbench
 
   -- component instantiation
-  DUT : rising_edge_detector
+  DUT : cntdn
     PORT MAP (
-      clk_i  => clk_i,
-      rst_ni => rst_ni,
-      x_i    => x_i,
-      rise_o => rise_o);
+      clk_i   => clk_i,
+      rst_ni  => rst_ni,
+      en_pi   => en_pi,
+      count_o => count_o,
+      tc_o    => tc_o);
 
   -- clock generation
-  clock_p : PROCESS
+  clock_proc : PROCESS
   BEGIN
     WHILE clken_p LOOP
       clk_i <= '0'; WAIT FOR period/2;
@@ -64,29 +63,35 @@ BEGIN  -- tbench
   -- initial reset, always necessary at the beginning of a simulation
   reset : rst_ni <= '0', '1' AFTER period;
 
-
   stimuli_p : PROCESS
+
   BEGIN
 
     WAIT UNTIL rst_ni = '1';            -- wait until asynchronous reset ...
                                         -- ... is deactivated
 
-    x_i <= '0';                         -- assign a '0' to x_i
-    WAIT FOR period;
+    en_pi <= '1';                       -- activate enable input en_pi
 
-    x_i <= '1';                     -- set input to '1' ...
-    WAIT FOR 6 * period;                -- ... for a no. of periods
+              WAIT UNTIL count_o = B"1111";           -- wait for at least one count cycle
 
-    x_i <= '0';                         -- assign a '0' to form a
-    WAIT FOR 3 * period;                -- high active input pulse
+                WAIT FOR 5 * period;     -- wait for a no. of count values
+                   -- then ...
 
+                      en_pi <= '0'; -- .... deactivate enable input en_pi
+    
+
+                    WAIT FOR 3 * period;
+    
+                      en_pi <= '1';   -- activate enable input en_pi
+                      
+                        WAIT UNTIL count_o = B"1111";           -- wait for at least one count cycle
+    
 
     clken_p <= false;                   -- switch clock generator off
 
     WAIT;                               -- suspend proces
   END PROCESS;
   
---TODO SIGNAL HINZUFUEGEN, DASS UEBER 10 PERIODEN LAEUFT
 END tbench;
 
 -------------------------------------------------------------------------------

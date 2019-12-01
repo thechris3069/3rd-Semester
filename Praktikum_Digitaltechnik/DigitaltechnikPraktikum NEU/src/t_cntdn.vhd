@@ -72,15 +72,23 @@ BEGIN  -- tbench
 
     en_pi <= '1';                       -- activate enable input en_pi
 
-                   -- wait for at least one count cycle
+              WAIT UNTIL count_o = B"1111";           -- wait for at least one count cycle
 
-                   -- wait for a no. of count values
+                WAIT FOR 5 * period;     -- wait for a no. of count values
                    -- then ...
 
-                   -- .... deactivate enable input en_pi
+                      en_pi <= '0'; -- .... deactivate enable input en_pi
     
 
-                   -- activate enable input en_pi
+                    WAIT FOR 3 * period;
+    
+                      en_pi <= '1';   -- activate enable input en_pi
+                      
+                        WAIT UNTIL count_o = B"1111";           -- wait for at least one count cycle
+                        
+                                            WAIT FOR 3 * period;
+                                            
+                                             WAIT UNTIL count_o = B"1111";           -- wait for at least one count cycle
     
 
     clken_p <= false;                   -- switch clock generator off
