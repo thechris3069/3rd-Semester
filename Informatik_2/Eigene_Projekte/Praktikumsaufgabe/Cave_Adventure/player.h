@@ -32,16 +32,22 @@ public:
     {
         return m_anzahl_health;
     }
- const uint8_t m_groesseSpielfeld;
-//    Player(const uint8_t groesseSpielfeld =15);
+    int veraendereLeben(int deltaleben)
+    {
+        if(m_anzahl_health > deltaleben)
+            m_anzahl_health -= deltaleben;
+    }
+
+    const uint8_t m_groesseSpielfeld;
+    //    Player(const uint8_t groesseSpielfeld =15);
     Player(const std::string name = "player1", const uint8_t groesseSpielfeld = 15);
     ~Player();
-        bool nextmove();
-        void showinventory() const;
-         void ausgabe() const;
-         bool verringereLeben(int anzahl_lebenspunkte);
-//         void veraendereGold()(int anzahl_goldstuecke);
-         bool nehmeGold();
+    bool nextmove();
+    void showinventory() const;
+    void ausgabe() const;
+    bool verringereLeben(int anzahl_lebenspunkte);
+    void veraendereGold(int anzahl_goldstuecke);
+//         bool nehmeGold();
 
 
 private:

@@ -39,9 +39,19 @@ RaumGold::RaumGold()
 //        getEntryText();
 }
 
-void RaumGold::interagieremitSpieler(Player *p)
+void RaumGold::interagieremitSpieler(Player *p) //
 {
-   std::cout << "Interaktion des Eingangs" << std::endl;
+        char eingabe;
+        std::cout << "moechten Sie das Gold mitnehmen? Interaktion mit E, WASD  fuer Weitergehen" << std::endl;
+        std::cin >> eingabe;
+        std::cin.ignore(INT_MAX, '\n');
+        eingabe = toupper(eingabe);
+        if  (eingabe == 'E')
+        {
+            p->veraendereGold(anzahlGold);
+            anzahlGold = 0;
+        }
+        //else Cave Adventure next move
 }
 
 RaumGold::~RaumGold()
@@ -62,8 +72,16 @@ RaumHaendler::~RaumHaendler()
 
 RaumKreatur::RaumKreatur()
 {
+
     ausgabetext = "Kreatur in diesem Raum";
 //        getEntryText();
+}
+
+void RaumKreatur::interagieremitSpieler(Player *p) //Soll nur einmal ausgefuehrt werden
+{
+    int lebenKreatur = 30;
+    int schaden = 5;
+    p->veraendereLeben(schaden);
 }
 
 RaumKreatur::~RaumKreatur()

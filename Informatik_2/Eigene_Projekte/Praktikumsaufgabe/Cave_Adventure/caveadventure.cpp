@@ -18,6 +18,8 @@ void CaveAdventure::nextMove()
 
              m_player.ausgabe();
         m_world.raumBasisKlasse[positionSpielerreihe][positionSpielerspalte]->getEntryText();
+        m_world.raumBasisKlasse[positionSpielerreihe][positionSpielerspalte]->interagieremitSpieler(&m_player);
+
         //return raum als Zeiger
 //        Raum * dawodubist = m_world.raumBasisKlasse[positionSpielerreihe][positionSpielerspalte];
 //        Raum * tmpRaum = m_world.getRaum(positionSpielerreihe, positionSpielerspalte);

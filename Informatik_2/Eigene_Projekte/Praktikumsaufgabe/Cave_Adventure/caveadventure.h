@@ -15,8 +15,8 @@ public:
     Player m_player;
 
 protected:
-    void goldraum();
-    void kreatur();
+//    void goldraum();
+//    void kreatur();
 private:
 };
 

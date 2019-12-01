@@ -2,8 +2,6 @@
 
 using namespace  std;
 
-
-
 //Player::Player(const uint8_t groesseSpielfeld)
 //    :m_anzahl_armor(5),m_groesseSpielfeld(groesseSpielfeld), m_anzahl_health(80), m_anzahl_gold(20), aktPosition(12)
 //{
@@ -25,13 +23,7 @@ Player::~Player()
 
 void Player::ausgabe() const
 {
-//    unsigned int reihe, spalte;
-//    cout << m_name << endl;
-//    cout << "Leben: " << static_cast<int>(m_anzahl_health) << endl;
-//    cout << "Rüstung: " << static_cast<int>(m_anzahl_armor) <<endl;
-//    cout << "Gold: " << static_cast<int>(m_anzahl_gold) <<endl;
     cout << "Sie sind in der Reihe " << m_position.reihe +1 << " und Spalte " << m_position.spalte +1 << endl;
-
     cout << endl << endl;
 }
 
@@ -39,7 +31,6 @@ bool Player::nextmove()
 {
     bool schrittmoeglich = false;
     schrittmoeglich = move();
-//    ausgabe();
     return schrittmoeglich;
 }
 
@@ -53,9 +44,9 @@ void Player::zeigeStatus() const
 
 bool Player::move()
 {
-    cout << "Geben Sie ein, wo Sie hingehen möchten" << endl << endl;
+    std::cout << "Geben Sie ein, wo Sie hingehen möchten" << std::endl << std::endl;
     char eingabe;
-    cin >> eingabe;
+    std::cin >> eingabe;
     eingabe = toupper(eingabe);
     switch (eingabe)
     {
@@ -83,7 +74,7 @@ bool Player::move()
 
 
     default:
-        cout << "Falsche Eingabe" << endl;
+        std::cout << "Falsche Eingabe" << std::endl;
         break;
         return true;
     }
@@ -133,19 +124,11 @@ void Player::geheEinFeld(const  int x, const int y, const int anzahl_schritte)
 //    return true;
 //}
 
-//void Player::veraendereGold(int anzahl_goldstuecke)
-//{
-//    char eingabe;
-//    std::cout << "moechsten Sie das Gold mitnehmen? Interaktion mit E, WASD  fuer Weitergehen" << std::endl;
-//    std::cin >> eingabe;
-//    cin.ignore(INT_MAX, '\n');
-//    eingabe = toupper(eingabe);
-//    if  (eingabe == 'E')
-//    {
-////        m_anzahl_gold += Gold aus Godraum;
-//    }
+void Player::veraendereGold(int anzahl_goldstuecke)
+{
+    m_anzahl_gold += anzahl_goldstuecke;
+}
 
-//}
 
 bool Player::verringereLeben(int anzahl_lebenspunkte)
 {
@@ -165,4 +148,6 @@ bool Player::verringereLeben(int anzahl_lebenspunkte)
 void Player::showinventory() const
 {
     cout <<"Gold: " << static_cast <int> (m_anzahl_gold) << endl;
+    cout << "Leben: " << static_cast <int> (m_anzahl_health) <<endl;
+    cout <<"Ruestung: " << static_cast <int> (m_anzahl_armor) << endl;
 }

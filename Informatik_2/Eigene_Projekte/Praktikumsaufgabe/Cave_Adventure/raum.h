@@ -38,7 +38,7 @@ class RaumKreatur : public Raum
     public:
 RaumKreatur();
 ~RaumKreatur();
-//void interagieremitSpieler(Player *p);
+void interagieremitSpieler(Player *p);
 };
 
 class RaumEXIT : public Raum
