@@ -18,6 +18,11 @@ public:
         unsigned int reihe, spalte;
     };
 
+    Player(const Player &p) = delete;
+    Player operator =(const Player &) = delete;
+
+    bool beendeSpiel;
+
     void zeigeStatus() const;
 
     int getPositionReihe() const
@@ -32,7 +37,7 @@ public:
     {
         return m_anzahl_health;
     }
-    int veraendereLeben(int deltaleben)
+    void veraendereLeben(int deltaleben)
     {
         if(m_anzahl_health > deltaleben)
             m_anzahl_health -= deltaleben;
@@ -47,18 +52,17 @@ public:
     void ausgabe() const;
     bool verringereLeben(int anzahl_lebenspunkte);
     void veraendereGold(int anzahl_goldstuecke);
+    void initpos(int reihe, int spalte);
 //         bool nehmeGold();
 
 
 private:
 
     std::string m_name{"Player_1"};
-    void initpos(uint8_t);
+
     bool move();
     void geheEinFeld(const int x, const int y, const int anzahl_schritte = 1);
-         struct Position m_position;
-
-
+    struct Position m_position;
 
 uint8_t m_anzahl_gold;
 uint8_t m_anzahl_armor;

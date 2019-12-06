@@ -10,20 +10,19 @@ class World
 public:
     World(unsigned int groesseSpielfeld);
             Raum ***raumBasisKlasse;
+            World(const World &w) = delete;
+            World operator = (const World &) = delete;
+                unsigned int m_startreihe, m_startspalte;
             Raum* getRaum(int zeile,int spalte)
             {
                 return raumBasisKlasse[zeile][spalte];
             }
 protected:
-
             void raumzuweisen();
             Raum* zufallsraum(Raum raum[]);
 private:
-
-
-//    std::string m_inhalt;
     const unsigned int m_reihe, m_spalte;
-    unsigned int m_startreihe, m_startspalte;
+
 };
 
 #endif // WORLD_H

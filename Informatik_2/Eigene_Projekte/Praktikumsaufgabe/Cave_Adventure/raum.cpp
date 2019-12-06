@@ -27,30 +27,40 @@ RaumEINGANG::~RaumEINGANG()
 
 }
 
-// void RaumEINGANG::interagieremitSpieler(Player *p)
-//{
-//    std::cout << "Interaktion des Eingangs" << std::endl;
-//}
+ void RaumEINGANG::interagieremitSpieler(Player *p)
+{
+    std::cout << "Interaktion des Eingangs" << std::endl;
+}
 
 RaumGold::RaumGold()
 {
     ausgabetext = "GOLD";
+
+
     anzahlGold = (rand() % 10);
-//        getEntryText();
+
 }
 
 void RaumGold::interagieremitSpieler(Player *p) //
 {
         char eingabe;
-        std::cout << "moechten Sie das Gold mitnehmen? Interaktion mit E, WASD  fuer Weitergehen" << std::endl;
-        std::cin >> eingabe;
-        std::cin.ignore(INT_MAX, '\n');
-        eingabe = toupper(eingabe);
-        if  (eingabe == 'E')
+            if(anzahlGold == 0)
         {
-            p->veraendereGold(anzahlGold);
-            anzahlGold = 0;
+          std::cout << "Kein Gold mehr da" << std::endl;
         }
+            else
+            {
+                std::cout << "moechten Sie das Gold mitnehmen? Interaktion mit E. Aufnehmen mit E" << std::endl;
+                std::cin >> eingabe;
+                std::cin.ignore(INT_MAX, '\n');
+                eingabe = toupper(eingabe);
+                if  (eingabe == 'E')
+                {
+                    p->veraendereGold(anzahlGold);
+                    anzahlGold = 0;
+                }
+            }
+
         //else Cave Adventure next move
 }
 
@@ -89,12 +99,15 @@ RaumKreatur::~RaumKreatur()
 
 }
 
-
-
 RaumEXIT::RaumEXIT()
 {
     ausgabetext = "Ausgang, endlich geschafft";
 //        getEntryText();
+}
+
+void RaumEXIT::interagieremitSpieler(Player *p)
+{
+    p->beendeSpiel = true; //gewonnen, uebergabe von 1, da geschafft
 }
 
 RaumEXIT::~RaumEXIT()

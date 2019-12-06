@@ -12,7 +12,8 @@ using namespace  std;
 Player::Player(const std::string name, const uint8_t groesseSpielfeld)
     :m_name(name) ,m_anzahl_armor(5),m_groesseSpielfeld(groesseSpielfeld), m_anzahl_health(80), m_anzahl_gold(20), aktPosition(12)
 {
-    initpos(groesseSpielfeld);
+    beendeSpiel = false;
+//    initpos(reihe, spalte);
     ausgabe();
 }
 
@@ -81,11 +82,12 @@ bool Player::move()
     cin.ignore(INT_MAX, '\n');
 }
 
-void Player::initpos(uint8_t size)
+void Player::initpos(int reihe, int spalte)
 {
-    m_position.reihe  = aktPosition /m_groesseSpielfeld;
-    m_position.spalte = aktPosition % m_groesseSpielfeld;
+    m_position.reihe  = reihe;
+    m_position.spalte = spalte;
 }
+
 
 
 void Player::geheEinFeld(const  int x, const int y, const int anzahl_schritte)

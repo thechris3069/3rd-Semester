@@ -7,6 +7,11 @@
 class Raum
 {
 public:
+    bool istSpielbeendet();
+    Raum(const Raum &r) = delete;
+    Raum operator=(const Raum &) = delete;
+
+//    bool beendeSpiel  = false;
     Raum();
     virtual ~Raum();
     virtual void getEntryText();
@@ -45,6 +50,7 @@ class RaumEXIT : public Raum
 {
     public:
 RaumEXIT();
+void interagieremitSpieler(Player *p);
 ~RaumEXIT();
 };
 
@@ -52,6 +58,7 @@ class RaumEINGANG : public Raum
 {
     public:
 RaumEINGANG();
+void interagieremitSpieler(Player *p);
 ~RaumEINGANG();
 
 };

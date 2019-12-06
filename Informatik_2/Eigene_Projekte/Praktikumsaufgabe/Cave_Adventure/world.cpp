@@ -1,16 +1,15 @@
-#include "world.h"
+﻿#include "world.h"
 
 World::World(unsigned int groesseSpielfeld)
     :m_reihe(groesseSpielfeld), m_spalte(groesseSpielfeld)
 {
+
     std::string m_inhalt{"Hallo Welt"};
     raumBasisKlasse = new Raum **[m_reihe];
 
     for(int i = 0; i < m_reihe; ++i)
     {
         raumBasisKlasse[i] = new Raum *[m_spalte];
-        //                m_inhalt = Raumzuweisen();
-        //                raumBasisKlasse[j][i] = RaumEXIT;
     }
 
     for (int reihe = 0; reihe < m_reihe; ++reihe)
@@ -24,12 +23,13 @@ World::World(unsigned int groesseSpielfeld)
 }
 
 
+
 void World::raumzuweisen()
 {
     srand(time(0));
     m_startreihe = rand() % m_reihe;
     m_startspalte = rand() % m_spalte;
-    raumBasisKlasse[m_startreihe][m_startspalte] = new RaumEINGANG();
+    raumBasisKlasse[m_startreihe][m_startspalte] = new RaumEINGANG(); //TODO: spieler muss hier zugewiesen werden
     int m_ausgangspalte, m_ausgangreihe;
     do{
     m_ausgangspalte = rand() % m_spalte;
@@ -44,9 +44,7 @@ void World::raumzuweisen()
         {
             if(raumBasisKlasse[reihe][spalte] == nullptr)
             {
-
                 raumBasisKlasse[reihe][spalte] = zufallsraum(raumBasisKlasse[reihe][spalte]);
-//                raumBasisKlasse[reihe][spalte] = new RaumGold(); // fuege rand noch ein
             }
         }
     }

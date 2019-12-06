@@ -1,22 +1,28 @@
 #include "caveadventure.h"
 
 CaveAdventure::CaveAdventure(std::string spielername ,unsigned int  groesseSpielfeld)
-    :m_player(spielername, groesseSpielfeld), m_world(groesseSpielfeld)
+    :m_world(groesseSpielfeld),  m_player(spielername, groesseSpielfeld)
 {
-nextMove();
+    m_player.initpos(m_world.m_startreihe, m_world.m_startspalte);
+    nextMove();
+
 }
 
 void CaveAdventure::nextMove()
 {
     int positionSpielerreihe, positionSpielerspalte;
-    while(m_player.nextmove() && (m_player.getPLayerHealth() > 0))
+    while(m_player.nextmove() && (m_player.getPLayerHealth() > 0) && !(m_player.beendeSpiel))
     {
 
      positionSpielerreihe = m_player.getPositionReihe();
      positionSpielerspalte = m_player.getPositionSpalte();
 
+      if(m_player.getPLayerHealth() < 20)
+      {
+          m_player.zeigeStatus();
+      }
 
-             m_player.ausgabe();
+        m_player.ausgabe();
         m_world.raumBasisKlasse[positionSpielerreihe][positionSpielerspalte]->getEntryText();
         m_world.raumBasisKlasse[positionSpielerreihe][positionSpielerspalte]->interagieremitSpieler(&m_player);
 
