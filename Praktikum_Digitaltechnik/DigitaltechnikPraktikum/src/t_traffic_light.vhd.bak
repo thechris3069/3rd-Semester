@@ -73,8 +73,8 @@ BEGIN  -- tbench
   -- in dependence of clock period and generic parameter m
   clock_divider : ENTITY work.cntdnmodm(rtl)
     GENERIC MAP (
-      n => 4, --3
-      m => 5) --4
+      n => 7, --3
+      m => 50) --4
     PORT MAP (
       clk_i   => clk_i,
       rst_ni  => rst_ni,

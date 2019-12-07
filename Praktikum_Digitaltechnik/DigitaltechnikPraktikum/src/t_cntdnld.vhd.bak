@@ -104,7 +104,7 @@ BEGIN  -- tbench
     WAIT FOR 2* period;              -- for some cycles
     
     en_pi <= '1';              -- activate counting again
-    WAIT UNTIL tc_o <= '1';  --AUSGANG FF = 1            -- until count value = 0
+    WAIT UNTIL tc_o <= '0';              -- until count value = 0
     
       en_pi <= '0';            -- disable counting
       WAIT FOR 2 * period;            -- for some cycles

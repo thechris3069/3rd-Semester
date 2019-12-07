@@ -86,8 +86,8 @@ BEGIN
 
   --  complete the multiplexer statement
   -----------------------------------------------------------------------------
-  mux2 : en_data <= current_state WHEN en_pi = '0' ELSE
-							decrement WHEN en_pi = '1' ELSE 
+  mux2 : en_data <= current_state WHEN en_pi = '1' ELSE
+							decrement WHEN en_pi = '0' ELSE 
 								"XXXX";
 
 
@@ -98,7 +98,7 @@ BEGIN
 
   -- provides a H-active signal, when current_state = 0
   -- fill in a boolean equation 
-  terminal_count : tc_o <= (NOT(current_state(0) OR current_state(1) OR current_state(2) OR current_state(3)));
+  terminal_count : tc_o <= (NOT(next_state(0) OR next_state(1) OR next_state(2) OR next_state(3)));
 
 
 
