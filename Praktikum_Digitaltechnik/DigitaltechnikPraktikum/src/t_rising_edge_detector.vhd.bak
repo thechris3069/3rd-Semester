@@ -79,7 +79,7 @@ BEGIN  -- tbench
     new_i <='0';
     WAIT FOR period;
 
-    x_i <= '1'
+    x_i <= '1';
     new_i <= '1';                         -- set input to '1' ...
     WAIT FOR 6 * period;                -- ... for a no. of periods
 

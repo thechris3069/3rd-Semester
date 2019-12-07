@@ -27,8 +27,6 @@ ARCHITECTURE tbench OF t_rising_edge_detector IS
       clk_i  : IN  std_ulogic;
       rst_ni : IN  std_ulogic;
       x_i    : IN  std_ulogic;
-          new_i    : IN  std_ulogic;
-    new_o    : OUT  std_ulogic;
       rise_o : OUT std_ulogic);
   END COMPONENT;
 
@@ -42,7 +40,6 @@ ARCHITECTURE tbench OF t_rising_edge_detector IS
   SIGNAL rst_ni : std_ulogic;
   SIGNAL x_i    : std_ulogic;
   SIGNAL rise_o : std_ulogic;
-  SIGNAL new_i  : std_ulogic;
 
 BEGIN  -- tbench
 
@@ -52,8 +49,7 @@ BEGIN  -- tbench
       clk_i  => clk_i,
       rst_ni => rst_ni,
       x_i    => x_i,
-      rise_o => rise_o,
-      new_i  => new_i);
+      rise_o => rise_o);
 
   -- clock generation
   clock_p : PROCESS
@@ -76,11 +72,9 @@ BEGIN  -- tbench
                                         -- ... is deactivated
 
     x_i <= '0';                         -- assign a '0' to x_i
-    new_i <='0';
     WAIT FOR period;
 
-    x_i <= '1';
-    new_i <= '1';                         -- set input to '1' ...
+    x_i <= '1';                     -- set input to '1' ...
     WAIT FOR 6 * period;                -- ... for a no. of periods
 
     x_i <= '0';                         -- assign a '0' to form a

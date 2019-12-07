@@ -58,7 +58,7 @@ BEGIN
       co_o  => OPEN);
       
       
-        state_register : ENTITY work.dregen(structure)
+        state_register : ENTITY work.dregen(rtl)
     PORT MAP (
       clk_i  => clk_i,
       rst_ni => rst_ni,
