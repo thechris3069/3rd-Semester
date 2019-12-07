@@ -1,0 +1,62 @@
+<?xml version='1.0'?>
+<!DOCTYPE qfsmproject SYSTEM 'qfsm.dtd'>
+<qfsmproject version="0.52" author="Qfsm">
+  <machine nummooreout="3" transfontitalic="0" draw_it="1" statefontsize="8" transfont="Helvetica" statefontitalic="0" author="C.S" description="FSM of a traffic light controller&#xa;v0.1 first simple version with 4 states and 3 light outputs, including one next phase eneable singal next_phase_en_pi" version="0.1" name="traffic_light" arrowtype="1" numbits="2" statefontweight="50" statefont="Helvetica" numin="1" transfontsize="8" transfontweight="50" type="0" numout="0" initialstate="0">
+    <outputnames_moore>red_o,yellow_o,green_o</outputnames_moore>
+    <inputnames>next_phase_en_pi</inputnames>
+    <outputnames></outputnames>
+    <itransition ypos="113" endx="263" xpos="203" endy="113"/>
+    <state pencolor="0" radius="40" description="" finalstate="1" moore_outputs="100" ypos="113" code="0" xpos="303" linewidth="1">red_state</state>
+    <state pencolor="0" radius="40" description="" finalstate="0" moore_outputs="110" ypos="213" code="1" xpos="526" linewidth="1">redyellow_state</state>
+    <state pencolor="0" radius="40" description="" finalstate="0" moore_outputs="001" ypos="388,8" code="2" xpos="301,2" linewidth="1">green_state</state>
+    <state pencolor="0" radius="40" description="" finalstate="0" moore_outputs="010" ypos="534" code="3" xpos="301,9999999999999" linewidth="1">yellow_state</state>
+    <transition c1x="376,0472055664437" c2y="166,4656594831129" c1y="159,7328065746254" description="" straight="1" type="0" ypos="152,9999536661379" endx="522,0198512391601" xpos="303,0608827300854" endy="173,1985123916004" c2x="449,0335284028018">
+      <from>0</from>
+      <to>1</to>
+      <inputs default="0" any="1" invert="0">x</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="341,0470483313979" c2y="142,2750881145003" c1y="-11,14542703741391" description="" straight="0" type="0" ypos="78,18489941968636" endx="342,9994328532239" xpos="322,6953997568631" endy="113,213005681686" c2x="485,9440659081002">
+      <from>0</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">0</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="451,5557880476209" c2y="316,9207130514141" c1y="284,9584384615664" description="" straight="1" type="0" ypos="252,9961638717187" endx="303,7752911199186" xpos="525,446036511472" endy="348,8829876412617" c2x="377,6655395837698">
+      <from>1</from>
+      <to>2</to>
+      <inputs default="0" any="0" invert="0">1</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="587,1509259062761" c2y="235,1494911140744" c1y="109,749991473099" description="" straight="1" type="0" ypos="185,0317248165234" endx="565,8840619061946" xpos="554,5967757493975" endy="209,9567113408629" c2x="643,9381195516851">
+      <from>1</from>
+      <to>1</to>
+      <inputs default="0" any="0" invert="0">0|1</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="299,6287831818238" c2y="472,5635783137361" c1y="450,6814856022434" description="" straight="1" type="0" ypos="428,7993928907507" endx="296,0455848855183" xpos="301,4203823299766" endy="494,4456710252287" c2x="297,8371840336711">
+      <from>2</from>
+      <to>3</to>
+      <inputs default="0" any="0" invert="0">1</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="332,5442178195585" c2y="378,6363328065578" c1y="272,9658944469287" description="" straight="1" type="0" ypos="354,2084421355964" endx="338,8213497064885" xpos="321,2854206954601" endy="375,2119888776137" c2x="420,7688080946739">
+      <from>2</from>
+      <to>2</to>
+      <inputs default="0" any="0" invert="0">0</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="185,8673875898594" c2y="192,0967733722556" c1y="382,0484431062432" description="" straight="0" type="0" ypos="494,0001128402309" endx="277,4121395526674" xpos="302,0950116084555" endy="143,7451036382679" c2x="180,0397635712635">
+      <from>3</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">1</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="405,9947937496" c2y="611,2444921381247" c1y="474,1244384328788" description="" straight="1" type="0" ypos="523,6934939775867" endx="338,2320506194858" xpos="340,6493975840497" endy="550,9481122225163" c2x="393,832937633091">
+      <from>3</from>
+      <to>3</to>
+      <inputs default="0" any="0" invert="0">0</inputs>
+      <outputs></outputs>
+    </transition>
+  </machine>
+</qfsmproject>

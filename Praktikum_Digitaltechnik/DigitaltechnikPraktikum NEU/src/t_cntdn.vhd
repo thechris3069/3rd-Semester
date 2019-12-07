@@ -28,7 +28,7 @@ ARCHITECTURE tbench OF t_cntdn IS
   END COMPONENT;
 
   -- definition of a clock period
-  CONSTANT period : time    := 10 ns;
+  CONSTANT period : time    := 20 ns;
   -- switch for clock generator
   SIGNAL clken_p  : boolean := true;
 

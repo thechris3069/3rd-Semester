@@ -55,7 +55,7 @@ BEGIN
       d_i    => q0,
       q_o    => q1);
 
-  output_logic : rise_o <= NOT q1 AND q0;          -- <- fill in correct equation here
+  output_logic : rise_o <= ((NOT q1) AND q0);          -- <- fill in correct equation here
  -- output_logic : new_o <= q1 AND new_i;
   
 END structure;
