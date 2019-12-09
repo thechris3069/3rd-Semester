@@ -126,7 +126,7 @@ BEGIN  -- tbench
            red_phase_value <= "0111";   -- change red phase value
           
     
-           g_phase_value <= "1100";   -- change green phase value
+           green_phase_value <= "1100";   -- change green phase value
     
             WAIT FOR 1900 ns;
            -- WAIT UNTIL ld_cnt = '100';  -- wait for at least a full cycle
