@@ -10,11 +10,11 @@ using namespace  std;
 //}
 
 Player::Player(const std::string name, const uint8_t groesseSpielfeld)
-    :m_name(name) ,m_anzahl_armor(5),m_groesseSpielfeld(groesseSpielfeld), m_anzahl_health(80), m_anzahl_gold(20), aktPosition(12)
+    :m_name(name) ,m_anzahl_armor(5),m_groesseSpielfeld(groesseSpielfeld), m_anzahl_health(20), m_anzahl_gold(20), aktPosition(12)
 {
     beendeSpiel = false;
 //    initpos(reihe, spalte);
-    ausgabe();
+//    ausgabe();
 }
 
 Player::~Player()
@@ -86,6 +86,7 @@ void Player::initpos(int reihe, int spalte)
 {
     m_position.reihe  = reihe;
     m_position.spalte = spalte;
+    ausgabe();
 }
 
 
@@ -132,19 +133,19 @@ void Player::veraendereGold(int anzahl_goldstuecke)
 }
 
 
-bool Player::verringereLeben(int anzahl_lebenspunkte)
-{
-    if(m_anzahl_health > anzahl_lebenspunkte)
-    {
-        m_anzahl_health -= anzahl_lebenspunkte;
-        return true;
-    }
-    else
-    {
-        std::cout << "Game over" << std::endl;
-        return false;
-    }
-}
+//bool Player::verringereLeben(int anzahl_lebenspunkte)
+//{
+//    if(m_anzahl_health > anzahl_lebenspunkte)
+//    {
+//        m_anzahl_health -= anzahl_lebenspunkte;
+//        return true;
+//    }
+//    else
+//    {
+//        std::cout << "Game over" << std::endl;
+//        return false;
+//    }
+//}
 
 
 void Player::showinventory() const

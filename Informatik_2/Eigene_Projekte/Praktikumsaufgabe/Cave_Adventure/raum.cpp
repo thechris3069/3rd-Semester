@@ -90,7 +90,7 @@ RaumKreatur::RaumKreatur()
 void RaumKreatur::interagieremitSpieler(Player *p) //Soll nur einmal ausgefuehrt werden
 {
     int lebenKreatur = 30;
-    int schaden = 5;
+    int schaden = -5;
     p->veraendereLeben(schaden);
 }
 

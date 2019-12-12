@@ -9,17 +9,18 @@ class World
 {
 public:
     World(unsigned int groesseSpielfeld);
-            Raum ***raumBasisKlasse;
-            World(const World &w) = delete;
-            World operator = (const World &) = delete;
-                unsigned int m_startreihe, m_startspalte;
-            Raum* getRaum(int zeile,int spalte)
-            {
-                return raumBasisKlasse[zeile][spalte];
-            }
+    Raum ***raumBasisKlasse;
+    unsigned int m_startreihe, m_startspalte;
+    World(const World &w) = delete;
+    World operator = (const World &) = delete;
+
+    Raum* getRaum(int zeile,int spalte)
+    {
+        return raumBasisKlasse[zeile][spalte];
+    }
 protected:
-            void raumzuweisen();
-            Raum* zufallsraum(Raum raum[]);
+    void raumzuweisen();
+    Raum* zufallsraum(Raum raum[]);
 private:
     const unsigned int m_reihe, m_spalte;
 
