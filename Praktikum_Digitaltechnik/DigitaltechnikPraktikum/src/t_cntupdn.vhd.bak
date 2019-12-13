@@ -82,7 +82,7 @@ BEGIN  -- tbench
             WAIT FOR 3* period;  
   
             en_pi <= '1';  -- activate enable input en_pi
-            WAIT FOR 5* period;
+            WAIT UNTIL 5* period;
 
     clken_p <= false;                   -- switch clock generator off
 

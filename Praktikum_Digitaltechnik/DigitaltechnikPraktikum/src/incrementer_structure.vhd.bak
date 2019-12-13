@@ -29,7 +29,7 @@ ARCHITECTURE structure OF incrementer IS
     PORT (
       en_po : OUT std_ulogic;
       dir_o : OUT std_ulogic;
-      clk : IN std_ulogic; 
+      clk_i : IN std_ulogic; 
        sensor_i :IN std_ulogic_vector(1 DOWNTO 0);
       rst_n : IN std_ulogic);
   END COMPONENT;
@@ -56,7 +56,7 @@ BEGIN
     PORT MAP (
       en_po => enable,
       dir_o => direction,
-      clk => clk_i, 
+      clk_i => clk_i, 
       rst_n => rst_ni,
       sensor_i => sensor_i);
 

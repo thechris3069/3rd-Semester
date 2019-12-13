@@ -24,30 +24,10 @@ END synchroniser;
 
 ARCHITECTURE structure OF synchroniser IS
 
-COMPONENT d_ff 
-  PORT (
-    clk_i  : IN  std_ulogic;
-    rst_ni : IN  std_ulogic;
-    d_i    : IN  std_ulogic;
-    q_o    : OUT std_ulogic
-    );
-END COMPONENT;
-  SIGNAL  sync : std_ulogic;
+  
 BEGIN
-d_ff_1 : d_ff
-PORT MAP(
-	clk_i => clk_i,
-	rst_ni => rst_ni,
-	d_i => unsync_i,
-	q_o => sync);
 
-	
-d_ff_2 : d_ff
-PORT MAP(
-clk_i => clk_i,
-rst_ni => rst_ni,
-d_i => sync, 
-q_o => sync_o);
+
 
 END structure;
 

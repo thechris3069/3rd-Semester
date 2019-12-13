@@ -98,7 +98,7 @@ BEGIN  -- tbench
     
     -- alternatively, a local procedure can be used to assign input values:
     -- FORWARD
-  sensor_i <= B"00";  --    apply_sensor(B"00", 10);
+  sensor_i <= B"00"  --    apply_sensor(B"00", 10);
   WAIT FOR 10 *period;
   
   

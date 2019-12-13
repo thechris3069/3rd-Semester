@@ -73,7 +73,7 @@ PORT MAP (
       rst_ni   => rst_ni,                     -- fill in the increment
       en_pi  => en_pi,                      -- set the correct constant
       d_i => next_state,
-      q_o  => current_state);
+      q_o  => count_o);
     
   mode_mux : next_state <= increment WHEN mode_i = '1' ELSE
                            decrement WHEN mode_i = '0' ELSE
