@@ -4,18 +4,14 @@ CaveAdventure::CaveAdventure(std::string spielername ,unsigned int  groesseSpiel
     :m_world(groesseSpielfeld),  m_player(spielername, groesseSpielfeld)
 {
     m_player.initpos(m_world.m_startreihe, m_world.m_startspalte);
-    nextMove();
 
 }
 
+
 void CaveAdventure::nextMove()
 {
-    int positionSpielerreihe, positionSpielerspalte;
-    while(m_player.nextmove() && (m_player.getPLayerHealth() > 0) && !(m_player.beendeSpiel))
-    {
-
-     positionSpielerreihe = m_player.getPositionReihe();
-     positionSpielerspalte = m_player.getPositionSpalte();
+   int  positionSpielerreihe = m_player.getPositionReihe();
+   int positionSpielerspalte = m_player.getPositionSpalte();
 
       if(m_player.getPLayerHealth() < 20)
       {
@@ -26,15 +22,7 @@ void CaveAdventure::nextMove()
         m_world.raumBasisKlasse[positionSpielerreihe][positionSpielerspalte]->getEntryText();
         m_world.raumBasisKlasse[positionSpielerreihe][positionSpielerspalte]->interagieremitSpieler(&m_player);
 
-        //return raum als Zeiger
-//        Raum * dawodubist = m_world.raumBasisKlasse[positionSpielerreihe][positionSpielerspalte];
-//        Raum * tmpRaum = m_world.getRaum(positionSpielerreihe, positionSpielerspalte);
-//        const std::type_info &hierbinich = typeid(tmpRaum);
-//        if(*hierbinich) == RaumGold)
-        {
-     //       m_player.nehmeGold();
-        }
-    };    //UEBERPRUEF, OB NEXT MOVE MÖGLICH IST, ANSTATT DIE GROESSESPIELFELD IMMER ZU KOPIEREN UND IN JEDEM OBJEKT ZU SPEICHERN
+   //UEBERPRUEF, OB NEXT MOVE MÖGLICH IST, ANSTATT DIE GROESSESPIELFELD IMMER ZU KOPIEREN UND IN JEDEM OBJEKT ZU SPEICHERN
 }
 
 CaveAdventure::~CaveAdventure()

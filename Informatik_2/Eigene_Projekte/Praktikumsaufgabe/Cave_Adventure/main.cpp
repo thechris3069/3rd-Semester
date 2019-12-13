@@ -14,6 +14,10 @@ int main()
     cout <<  "Auf dem Weg begegnen ihnen Monster und Händer, Gold und Fallen, viel Glück" << endl;
     CaveAdventure spielumgebung("USER");
 
+    while(spielumgebung.m_player.nextmove() &&(spielumgebung.m_player.getPLayerHealth() > 0) && !(spielumgebung.m_player.beendeSpiel))
+    {
+    spielumgebung.nextMove();
+    }
 
 
     return 0;

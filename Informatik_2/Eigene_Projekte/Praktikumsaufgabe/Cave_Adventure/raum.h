@@ -7,19 +7,25 @@
 class Raum
 {
 public:
-    bool istSpielbeendet();
-    Raum(const Raum &r) = delete;
-    Raum operator=(const Raum &) = delete;
-
-//    bool beendeSpiel  = false;
+    Raum(const Raum &r)
+    {
+    ausgabetext = r.ausgabetext;
+    }
+    Raum operator=(const Raum &r)
+    {
+        if(this != &r)
+        {
+            ausgabetext = r.ausgabetext;
+        }
+        return *this;
+    }
     Raum();
     virtual ~Raum();
-    virtual void getEntryText();
+    void getEntryText();
     virtual void interagieremitSpieler(Player *p);
 
 protected:
     std::string ausgabetext;
-
 };
 
 class RaumGold : public Raum

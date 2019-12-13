@@ -13,7 +13,7 @@ class Player
 
 public:
 
-    struct Position{
+    class Position{
     public:
         unsigned int reihe, spalte;
     };
@@ -39,8 +39,7 @@ public:
     }
     void veraendereLeben(int deltaleben)
     {
-        if(m_anzahl_health > deltaleben)
-            m_anzahl_health -= deltaleben;
+            m_anzahl_health += deltaleben;
     }
 
     const uint8_t m_groesseSpielfeld;
@@ -50,25 +49,24 @@ public:
     bool nextmove();
     void showinventory() const;
     void ausgabe() const;
-    bool verringereLeben(int anzahl_lebenspunkte);
+//    bool verringereLeben(int anzahl_lebenspunkte);
     void veraendereGold(int anzahl_goldstuecke);
     void initpos(int reihe, int spalte);
-//         bool nehmeGold();
+
 
 
 private:
 
-    std::string m_name{"Player_1"};
-
     bool move();
     void geheEinFeld(const int x, const int y, const int anzahl_schritte = 1);
-    struct Position m_position;
 
-uint8_t m_anzahl_gold;
-uint8_t m_anzahl_armor;
-int aktPosition;
-uint8_t m_anzahl_health;
-int *position;
+    std::string m_name;
+    struct Position m_position;
+    uint8_t m_anzahl_gold;
+    uint8_t m_anzahl_armor;
+    int aktPosition;
+    uint8_t m_anzahl_health;
+    int *position;
 };
 
 #endif // PLAYER_H
