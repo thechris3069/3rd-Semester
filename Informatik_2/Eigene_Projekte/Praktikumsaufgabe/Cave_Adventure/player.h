@@ -13,7 +13,7 @@ class Player
 
 public:
 
-    struct Position{
+    class Position{
     public:
         unsigned int reihe, spalte;
     };

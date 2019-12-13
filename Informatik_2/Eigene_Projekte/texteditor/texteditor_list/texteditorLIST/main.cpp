@@ -7,15 +7,25 @@
 
 using namespace std;
 
+class Zeile
+{
+public:
+string m_inhalt;
+Zeile * next_p;
+};
+
 class Texteditor
 {
 public:
     Texteditor()
         :m_inhalt(NULL)
     {}
-    vector <string> m_inhalt;
+
+    Zeile * m_anker;
     void zeigeAktDoku();
     void zeigeAktionen();
+    void getNext();
+    void setNext();
 
 private:
     void loscheDoku();
@@ -47,36 +57,36 @@ void Texteditor::zeigeAktDoku()
 
 void Texteditor::loscheDoku()
 {
-    m_inhalt.clear();
-    cout << "Dokument wurde geloescht" << endl;
+//    m_inhalt.clear();
+//    cout << "Dokument wurde geloescht" << endl;
 }
 
 void Texteditor::zeileAendern()
 {
-    cout << "Welche Zeile soll veraendert werden?" << endl;
-    int zeile;
-    cin >> zeile;
-    cin.ignore(INT_MAX, '\n');
-    string zeileninhalt;
-    getline(cin, zeileninhalt);
-    if(zeile -1 <= m_inhalt.size())
-    zeileAendern(zeile-1, zeileninhalt);
+//    cout << "Welche Zeile soll veraendert werden?" << endl;
+//    int zeile;
+//    cin >> zeile;
+//    cin.ignore(INT_MAX, '\n');
+//    string zeileninhalt;
+//    getline(cin, zeileninhalt);
+//    if(zeile -1 <= m_inhalt.size())
+//    zeileAendern(zeile-1, zeileninhalt);
 
 }
 
 void Texteditor::zeileAendern(int idx, string inhalt)
 {
-    m_inhalt.at(idx) = inhalt;
+//    m_inhalt.at(idx) = inhalt;
 }
 
 void Texteditor::zeileEinfuegen()
 {
-    cout << "Geben Sie ihre Zeile ein" << endl;
-    string eingabe;
-    getline(cin, eingabe);
-//    cin >> eingabe;
-    m_inhalt.push_back(eingabe);
-//       cin.ignore(INT_MAX, '\n');
+//    cout << "Geben Sie ihre Zeile ein" << endl;
+//    string eingabe;
+//    getline(cin, eingabe);
+////    cin >> eingabe;
+//    m_inhalt.push_back(eingabe);
+////       cin.ignore(INT_MAX, '\n');
 
 }
 
