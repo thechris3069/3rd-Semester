@@ -1,0 +1,42 @@
+<?xml version='1.0'?>
+<!DOCTYPE qfsmproject SYSTEM 'qfsm.dtd'>
+<qfsmproject version="0.52" author="Qfsm">
+  <machine nummooreout="4" transfontitalic="0" draw_it="1" statefontsize="8" transfont="Helvetica" statefontitalic="0" author="" description="" version="" name="smencode" arrowtype="1" numbits="3" statefontweight="50" statefont="Helvetica" numin="3" transfontsize="8" transfontweight="50" type="0" numout="0" initialstate="0">
+    <outputnames_moore>sm_o[0..3],s_out2,s_out1,s_out0</outputnames_moore>
+    <inputnames>count_value[0..2],i_1,i_0</inputnames>
+    <outputnames></outputnames>
+    <itransition ypos="259" endx="349" xpos="289" endy="259"/>
+    <state pencolor="0" radius="40" description="" finalstate="1" moore_outputs="0011" ypos="259" code="0" xpos="389" linewidth="1">0</state>
+    <state pencolor="0" radius="40" description="" finalstate="0" moore_outputs="0010" ypos="248" code="1" xpos="624" linewidth="1">1</state>
+    <state pencolor="0" radius="40" description="" finalstate="0" moore_outputs="0110" ypos="248" code="2" xpos="759" linewidth="1">2</state>
+    <state pencolor="0" radius="40" description="" finalstate="0" moore_outputs="0010" ypos="243" code="3" xpos="894" linewidth="1">3</state>
+    <state pencolor="0" radius="40" description="" finalstate="0" moore_outputs="1100" ypos="249" code="4" xpos="1084" linewidth="1">4</state>
+    <state pencolor="0" radius="40" description="" finalstate="0" moore_outputs="1000" ypos="416" code="5" xpos="1081" linewidth="1">5</state>
+    <state pencolor="0" radius="40" description="" finalstate="0" moore_outputs="1001" ypos="422" code="6" xpos="866" linewidth="1">6</state>
+    <state pencolor="0" radius="40" description="" finalstate="0" moore_outputs="0001" ypos="445" code="7" xpos="633" linewidth="1">State_7</state>
+    <transition c1x="462,457598496158" c2y="330,0494946418894" c1y="310,4292667603106" description="" straight="0" type="0" ypos="257,8090388787317" endx="586,4082630604626" xpos="428,9822662140058" endy="261,6697225234682" c2x="534,9329307783103">
+      <from>0</from>
+      <to>1</to>
+      <inputs default="0" any="0" invert="0">001</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="281,1530586887113" c2y="139,6593633968116" c1y="206,3783575912017" description="" straight="1" type="0" ypos="232,7528514030085" endx="382,7488872278273" xpos="358,8157791134598" endy="219,4914744756327" c2x="401,5623427411343">
+      <from>0</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">000</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="544,1058264485007" c2y="182,2716484744167" c1y="170,7313047978425" description="" straight="0" type="0" ypos="249,1909611212683" endx="422,2820117735138" xpos="584,0177337859942" endy="236,8119921509908" c2x="454,1939191110072">
+      <from>1</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">000</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="556,1347914119937" c2y="150,3791222161461" c1y="149,0337761491003" description="" straight="1" type="0" ypos="210,2803866566844" endx="638,0475000293669" xpos="610,6871952905944" endy="210,547793884406" c2x="693,786561892028">
+      <from>1</from>
+      <to>1</to>
+      <inputs default="0" any="0" invert="0">001</inputs>
+      <outputs></outputs>
+    </transition>
+  </machine>
+</qfsmproject>

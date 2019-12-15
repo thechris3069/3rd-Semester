@@ -38,7 +38,7 @@ ARCHITECTURE structure OF smctrl IS
   
     COMPONENT smencode
     PORT (
-      bin_i : IN  std_ulogic_vector(2 DOWNTO 0);
+      bin_i : IN  std_ulogic_vector(3 DOWNTO 0);
       sm_o  : OUT std_ulogic_vector(3 DOWNTO 0));
   END COMPONENT;
 
