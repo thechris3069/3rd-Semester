@@ -68,13 +68,21 @@ BEGIN  -- tbench
 
   BEGIN
 
+  --  rst_ni <= '1';
     WAIT UNTIL rst_ni = '1';            -- wait until asynchronous reset ...
                                         -- ... is deactivated
 
            en_pi <= '1';  -- activate enable input en_pi
            mode_i <= '1';  -- count up
-           WAIT UNTIL count_o = "0000";  -- wait for at least one count cycle
 
+           WAIT UNTIL count_o = "0000";  -- wait for at least one count cycle
+            
+            
+        
+            WAIT FOR 1* period;
+            
+           
+            WAIT FOR 3 * period; 
              mode_i <= '0'; -- count down
              WAIT UNTIL count_o = "1010";  -- wait until count value = 10
 

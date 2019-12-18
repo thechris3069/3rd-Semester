@@ -30,6 +30,9 @@
 -- bw1          1     0     
 -- bw3          1     0     
 -- bw2          1     0     
+-- Reset        0     0     
+-- reset_0      0     0     
+-- reset_1      0     0     
 
 LIBRARY IEEE;
 
@@ -45,14 +48,14 @@ END resolver;
 
 ARCHITECTURE behave OF resolver IS
 
-TYPE state_type IS (idle1, idle3, idle2, idle0, fw1, fw3, fw2, fw0, bw0, bw1, bw3, bw2);
+TYPE state_type IS (idle1, idle3, idle2, idle0, fw1, fw3, fw2, fw0, bw0, bw1, bw3, bw2, Reset, reset_0, reset_1);
 SIGNAL next_state, current_state : state_type;
 
 BEGIN
   state_register: PROCESS (rst_n, clk)
   BEGIN
     IF rst_n='0' THEN
-      current_state <= idle0;
+      current_state <= reset_0;
     ELSIF rising_edge(clk) THEN
       current_state <= next_state;
     END IF;
@@ -69,6 +72,8 @@ BEGIN
           next_state <= fw3;
         ELSIF temp_input="00" THEN
           next_state <= bw0;
+        ELSIF temp_input="01" or temp_input="10" THEN
+          next_state <= idle1;
         ELSE
           next_state <= current_state;
         END IF;
@@ -77,6 +82,8 @@ BEGIN
           next_state <= fw2;
         ELSIF temp_input="01" THEN
           next_state <= bw1;
+        ELSIF temp_input="11" or temp_input="00" THEN
+          next_state <= idle3;
         ELSE
           next_state <= current_state;
         END IF;
@@ -85,6 +92,8 @@ BEGIN
           next_state <= fw0;
         ELSIF temp_input="11" THEN
           next_state <= bw3;
+        ELSIF temp_input="01" or temp_input="10" THEN
+          next_state <= idle2;
         ELSE
           next_state <= current_state;
         END IF;
@@ -138,6 +147,22 @@ BEGIN
         END IF;
       WHEN bw2 => temp_output := "10";
           next_state <= idle2;
+      WHEN Reset => temp_output := "00";
+        IF temp_input="00" THEN
+          next_state <= idle0;
+        ELSIF temp_input="11" THEN
+          next_state <= idle3;
+        ELSIF temp_input="01" THEN
+          next_state <= idle1;
+        ELSIF temp_input="10" THEN
+          next_state <= idle2;
+        ELSE
+          next_state <= current_state;
+        END IF;
+      WHEN reset_0 => temp_output := "00";
+          next_state <= reset_1;
+      WHEN reset_1 => temp_output := "00";
+          next_state <= Reset;
       WHEN OTHERS => temp_output := (OTHERS =>'X');
       next_state <= idle0;
     END CASE;

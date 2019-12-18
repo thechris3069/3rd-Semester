@@ -38,7 +38,7 @@ ARCHITECTURE structure OF smctrl IS
   
     COMPONENT smencode
     PORT (
-      bin_i : IN  std_ulogic_vector(3 DOWNTO 0);
+      bin_i : IN  std_ulogic_vector(2 DOWNTO 0);
       sm_o  : OUT std_ulogic_vector(3 DOWNTO 0));
   END COMPONENT;
 
@@ -63,9 +63,9 @@ BEGIN
       
   stepper_motor_encoder : smencode
     PORT MAP (
-      bin_i(0) => count_value(0),
-      bin_i(1) => count_value(1),
-      bin_i(2) => count_value(2),
+   --   bin_i(0) => count_value(0),
+     -- bin_i(1) => count_value(1),
+      bin_i(2) => count_value(2 DOWNTO 0), -- Signal als 
       sm_o => sm_o);
 
 --count_o => count_value;

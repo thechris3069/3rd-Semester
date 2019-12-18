@@ -58,17 +58,17 @@ BEGIN
       clk_i    => clk_i,
       rst_ni   => rst_ni,
       sensor_i => sensor_i,
-      count_o  => count_o);
+      count_o  => count_value);
       
       
   stepper_motor_encoder : smencode
     PORT MAP (
       bin_i(0) => count_value(0),
       bin_i(1) => count_value(1),
-      bin_i(2) => count_value(2),
+      bin_i(2) => count_value(2), -- Signal als 
       sm_o => sm_o);
 
---count_o => count_value;
+count_o <=count_value;
 
 
 END structure;

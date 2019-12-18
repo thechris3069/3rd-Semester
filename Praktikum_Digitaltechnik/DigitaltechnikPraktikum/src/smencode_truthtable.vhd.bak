@@ -35,7 +35,7 @@ BEGIN
     "1000" WHEN "101",
     "1001" WHEN "110",
     "0001" WHEN "111",
-    "XXXX" WHEN OTHERS;
+    'X' WHEN OTHERS;
 
 
 END truthtable;
