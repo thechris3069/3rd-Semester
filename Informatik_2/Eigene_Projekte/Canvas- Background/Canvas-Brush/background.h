@@ -5,6 +5,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <string>
+#include <math.h>
 
 #include "brush.h"
 #include "color.h"
@@ -17,6 +18,7 @@ private:
     unsigned int arraylength;
     uint8_t *pixelval;
     void setPixelWithBrush(int row, int col);
+
     void setPixel(int row, int col, Color c);
     int saveAsBmp(uint8_t bilddaten[], int b, int h);
     int saveAsPpm(uint8_t bilddaten[], int b, int h);
@@ -34,6 +36,7 @@ public:
     void paint(Color *c); // wird nur bei maleHintergrund aufgerufen
     void save(); // ruft beide save Funktions auf, saveasbmp und saveasppm
     void drawline(int startrow = 50, int endrow = 50, int startcol = 50, int endcol = 150);
+    void drawlineWinkel(int startx, int starty, int laenge, int winkel);
 //    void waehlePinsel(Brush *Pinsel);
 //    void waehlePinsel();
     unsigned int getSize_x() const

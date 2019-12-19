@@ -57,18 +57,35 @@ void Background::paint(Color *c)
     }
 }
 
-void Background::drawline(int startrow, int endrow, int startcol, int endcol)
+
+
+void Background::drawline(int startrow, int startcol, int endrow, int endcol)
 {
      m_currenBrush = getPinsel();
        m_currenBrush->malemitFarbe();
-    for(int row = startrow; row <= endrow; ++row)
-    {
-        for(int col = startcol; col <=endcol; ++col)
-        {
 
-            setPixelWithBrush(row,col);
-//            setPixel(row, col, *(m_currenBrush->m_currentColor));
-        }
+
+       int deltay = endcol - startcol;
+               int deltax = endrow - startrow;
+       int dist = static_cast<int> (sqrt((pow(deltay, 2))+ pow(deltax, 2)));
+       int maleany;
+
+for(int i = 0; i < dist; ++i)
+{
+   int  col = startcol + (deltax*i)/dist;
+    int row = startrow + (deltay*i)/dist ;
+setPixelWithBrush(row, col);
+}
+}
+
+void Background::drawlineWinkel(int startx, int starty, int laenge, int winkel)
+{
+    int radWinkel = winkel*M_PI /180;
+    for(int i = 0; i < laenge; ++i)
+    {
+        int y = starty + sin(radWinkel)*i/laenge;
+                int x = startx + cos(radWinkel)*i /laenge;
+                setPixelWithBrush(y, x);
     }
 }
 

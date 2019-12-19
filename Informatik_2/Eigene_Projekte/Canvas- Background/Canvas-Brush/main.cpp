@@ -82,7 +82,7 @@ int main()
     Background pictureOne(&gelb, 100, 100);
     pictureOne.setPinsel(&b);
     b.malemitFarbe(&rot);
-    pictureOne.drawline(0,10,20,80); //HOEHE ANFANG, HOEHE ENDE, BREITE ANFANG, BREITE ENDE
+    pictureOne.drawline(10,10,20,80);
     b.setFarbe(&weiss);
     pictureOne.drawline(10,50,50,60);
     savePicture(pictureOne);
@@ -91,3 +91,42 @@ int main()
 }
 
 //GROESSE von Pinsel implementieren
+
+
+
+void zeichneLinie(int x, int y, int laenge, int winkel)
+{
+
+    if(laenge < 5)
+    {
+        return
+    }
+    else
+    {
+        zeichneLinie(x-laenge*cos(winkel),y + laenge*sin(winkel), laenge *0.7, winkel + M_PI/8);
+                zeichneLinie(x-laenge*cos(winkel),y + laenge*sin(winkel), laenge *0.7, winkel - M_PI/8);
+                        zeichneLinie(x-laenge*cos(winkel),y + laenge*sin(winkel), laenge *0.7, winkel);
+    }
+}
+
+//REKURSIVER FARN
+
+int main()
+{
+    int laenge = 40, winkel = M_PI/2, startx = 50, starty = 90;
+
+    Brush b(3,3);
+    Color gelb("yellow");
+    Color rot("red");
+    Color weiss("weiß");
+    Color schwarz("schwarz");
+    Color grau(100,100,100);
+    Background pictureOne(&gelb, 100, 100);
+    pictureOne.setPinsel(&b);
+    b.malemitFarbe(&rot);
+
+        zeichneLinie(startx, starty, laenge, winkel);
+//        pictureOne.drawlineWinkel(  );
+
+        savePicture(pictureOne);
+}
