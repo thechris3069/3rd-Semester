@@ -73,6 +73,35 @@ void savePicture(Background &picture)
 ////    }
 ////    cout << endl;
 
+////    cout << &a << endl;
+////    cout << &bc << endl;
+
+
+////    int *p  = &a;
+
+////    *(p+1) = 99;
+
+////    cout << bc << endl;
+////#if 0
+////    long long wo =0;
+////    cin >> wo;
+////    *((int *)wo) = 10;
+////    cout << bc << endl;
+////#endif
+
+////    for( int i = 0; i <100; i++){
+////        printf("%c ", *((char *) &bc +i));
+
+
+
+////    }
+////    cout << endl;
+
+//int main()
+//{
+//    int laenge = 40;
+//    double winkel = M_PI/2;
+//            int startx = 50, starty = 90;
 
 
 //    Brush b(3,3);
@@ -94,6 +123,7 @@ void savePicture(Background &picture)
 
 ////GROESSE von Pinsel implementieren
 
+void histogramberechnen(int *output);
 
 
 //void zeichneLinie(int x, int y, int laenge, int winkel)
@@ -109,86 +139,6 @@ void savePicture(Background &picture)
 //                        zeichneLinie(x-laenge*cos(winkel),y + laenge*sin(winkel), laenge *0.7, winkel);
 //    }
 //}
-
-//REKURSIVER FARN
-
-//int main()
-//{
-//    int laenge = 40;
-//    double winkel = M_PI/2;
-//            int startx = 50, starty = 90;
-
-//    Brush b(3,3);
-//    Color gelb("yellow");
-//    Color rot("red");
-//    Color weiss("weiß");
-//    Color schwarz("schwarz");
-//    Color grau(100,100,100);
-//    Background pictureOne(&gelb, 100, 100);
-//    pictureOne.setPinsel(&b);
-//    b.malemitFarbe(&rot);
-
-//         pictureOne.zeichneLinie(startx, starty, laenge, winkel);
-////        pictureOne.drawlineWinkel(  );
-
-//        savePicture(pictureOne);
-//}
-
-
-void histogramberechnen(int *output);
-
-int main()
-{
-    ifstream myReadFile;
-    ofstream myWriteFile;
-    ofstream greyFile;
-    string temp;
-    myReadFile.open("magnolie.ppm");
-    myWriteFile.open("magnolieKopie.ppm");
-    greyFile.open("magnolieGreyscale.ppm");
-    string output;
-    if (myReadFile.is_open() && myWriteFile.is_open() && greyFile.is_open())
-    {
-        output = "P2";
-        greyFile << output <<endl;
-        greyFile << "#Das ist das GreyFile" << endl;
-        for(int i = 0; i < 3 ; ++i)
-        {
-            getline(myReadFile, output);
-            if(i == 2)
-                greyFile << output << endl;
-        }
-        while (!myReadFile.eof())
-        {
-            string red, green, blue;
-            getline(myReadFile, red);
-            if(myReadFile.eof())
-                break;
-            getline(myReadFile, green);
-            if(myReadFile.eof())
-                break;
-            getline(myReadFile, blue);
-            if(myReadFile.eof())
-                break;
-            int grauwert = static_cast<double> (0.299 * stoi(red) + 0.587 *stoi(green) + 0.144 * stoi(blue));
-            greyFile <<grauwert <<endl;
-
-        }
-        myReadFile.close();
-        myWriteFile.close();
-        greyFile.close();
-
-    } else {
-        cerr << "Could not open file..." << endl;
-    }
-
-
-    myReadFile.open("magnolieGreyscale.ppm");
-    if (myReadFile.is_open())
-    {
-        int greyval[256] = {0};
-        getline(myReadFile, output);
-        getline(myReadFile, output);
 
         while(!myReadFile.eof())
         {
@@ -249,3 +199,100 @@ int main()
 
                     //}
 
+//int main()
+//{
+//    int laenge = 40;
+//    double winkel = M_PI/2;
+//            int startx = 50, starty = 90;
+
+//    Brush b(3,3);
+//    Color gelb("yellow");
+//    Color rot("red");
+//    Color weiss("weiß");
+//    Color schwarz("schwarz");
+//    Color grau(100,100,100);
+//    Background pictureOne(&gelb, 100, 100);
+//    pictureOne.setPinsel(&b);
+//    b.malemitFarbe(&rot);
+
+//         pictureOne.zeichneLinie(startx, starty, laenge, winkel);
+////        pictureOne.drawlineWinkel(  );
+
+//        savePicture(pictureOne);
+//}
+
+
+int main()
+{
+    ifstream myReadFile;
+    ofstream myWriteFile;
+    ofstream greyFile;
+    string temp;
+    myReadFile.open("magnolie.ppm");
+    myWriteFile.open("magnolieKopie.ppm");
+    greyFile.open("magnolieGreyscale.ppm");
+    string output;
+    if (myReadFile.is_open() && myWriteFile.is_open() && greyFile.is_open()) {
+        greyFile << "#Das ist das GreyFile" << endl;
+        for(int i = 0; i < 3 ; ++i)
+        {
+            getline(myReadFile, output);
+                    greyFile << output << endl;
+        }
+        while (!myReadFile.eof()) {
+            {
+                for(int i = 0; i < 3 ; ++i)
+                {
+                    getline(myReadFile, output);
+                            greyFile << output << endl;
+                }
+
+            getline(myReadFile, output);
+
+            cout<<output << endl;
+
+
+//            if(isdigit(output[0]))
+//                if(*output.data() != '#')
+            if(*output.data() < 256 && isdigit(output[0]))
+            {
+            myWriteFile << output << endl;
+            temp.append(output); temp += '\n';
+            }
+            }
+//           while(!myWriteFile.eof())
+           {
+//               string r, g, b;
+//getline(myReadFile, output);
+//getline(myWriteFile, g);
+//getline(myWriteFile, b);
+
+
+//          int grauwert = static_cast<double> (0.299 * r + 0.587 *(g+1) + 0.144 * (b+2))
+//           }
+
+
+
+}
+        int greyval[256] = {0};
+        if (*output.data() < 256 && isdigit(output[0]))
+        {
+//                int grauwert = static_cast<double> (0.299 * i + 0.587 *(i+1) + 0.144 * (i+2))
+            greyval[*output.data()] =  greyval[*output.data()] +1;
+        }
+//            for(int i = 0; i< 256; ++i)
+//            {
+//                if(greyval[i] == 0)
+//                    cout << "Null mal gab es den Grauwert " << i << endl;
+            }
+
+
+        myReadFile.close();
+        myWriteFile.close();
+        greyFile.close();
+
+    } else {
+        cerr << "Could not open file..." << endl;
+    }
+    return 0;
+}
