@@ -11,6 +11,21 @@ Background::Background(Color *color, int laenge, int breite)
     paint(hintergrundfarbe);
 }
 
+void Background::zeichneLinie(int x, int y, int laenge, int winkel)
+{
+    drawlineWinkel(x, y, laenge, winkel);
+    if(laenge < 5)
+    {
+        return;
+    }
+    else
+    {
+        zeichneLinie(x - cos(winkel) *laenge,y - sin(winkel) *laenge, laenge *0.7, winkel + M_PI/8);
+        zeichneLinie(x - cos(winkel) *laenge,y - sin(winkel) *laenge, laenge *0.7, winkel - M_PI/8);
+        zeichneLinie(x - cos(winkel) *laenge,y - sin(winkel) *laenge, laenge *0.7, winkel);
+    }
+}
+
 Background::Background()
     :size_x(200), size_y(300), arraylength(size_x*size_y*3)
 {
@@ -61,8 +76,8 @@ void Background::paint(Color *c)
 
 void Background::drawline(int startrow, int startcol, int endrow, int endcol)
 {
-     m_currenBrush = getPinsel();
-       m_currenBrush->malemitFarbe();
+    m_currenBrush = getPinsel();
+    m_currenBrush->malemitFarbe();
 
 
        int deltay = endcol - startcol;
@@ -78,14 +93,18 @@ setPixelWithBrush(row, col);
 }
 }
 
-void Background::drawlineWinkel(int startx, int starty, int laenge, int winkel)
+void Background::drawlineWinkel(int startx, int starty, int laenge, double winkel)
 {
+    m_currenBrush = getPinsel();
+    m_currenBrush->malemitFarbe();
+
     int radWinkel = winkel*M_PI /180;
+
     for(int i = 0; i < laenge; ++i)
     {
-        int y = starty + sin(radWinkel)*i/laenge;
-                int x = startx + cos(radWinkel)*i /laenge;
-                setPixelWithBrush(y, x);
+        double neuesx = startx + cos(winkel) *i;
+        double neuesy = startx + sin(winkel) *i;
+        setPixelWithBrush(neuesy, neuesx);
     }
 }
 
