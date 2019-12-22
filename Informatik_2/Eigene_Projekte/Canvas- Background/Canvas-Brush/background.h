@@ -32,11 +32,11 @@ public:
     Background(int red, int green, int blue, int laenge, int breite);
     Background();
     ~Background();
-
+void zeichneLinie(int x, int y, int laenge, int winkel);
     void paint(Color *c); // wird nur bei maleHintergrund aufgerufen
     void save(); // ruft beide save Funktions auf, saveasbmp und saveasppm
     void drawline(int startrow = 50, int endrow = 50, int startcol = 50, int endcol = 150);
-    void drawlineWinkel(int startx, int starty, int laenge, int winkel);
+    void drawlineWinkel(int startx, int starty, int laenge, double winkel);
 //    void waehlePinsel(Brush *Pinsel);
 //    void waehlePinsel();
     unsigned int getSize_x() const
