@@ -135,6 +135,8 @@ void savePicture(Background &picture)
 //}
 
 
+void histogramberechnen(int *output);
+
 int main()
 {
     ifstream myReadFile;
@@ -145,61 +147,33 @@ int main()
     myWriteFile.open("magnolieKopie.ppm");
     greyFile.open("magnolieGreyscale.ppm");
     string output;
-    if (myReadFile.is_open() && myWriteFile.is_open() && greyFile.is_open()) {
+    if (myReadFile.is_open() && myWriteFile.is_open() && greyFile.is_open())
+    {
+        output = "P2";
+        greyFile << output <<endl;
         greyFile << "#Das ist das GreyFile" << endl;
         for(int i = 0; i < 3 ; ++i)
         {
             getline(myReadFile, output);
-                    greyFile << output << endl;
+            if(i == 2)
+                greyFile << output << endl;
         }
-        while (!myReadFile.eof()) {
-            {
-                for(int i = 0; i < 3 ; ++i)
-                {
-                    getline(myReadFile, output);
-                            greyFile << output << endl;
-                }
-
-            getline(myReadFile, output);
-
-            cout<<output << endl;
-
-
-//            if(isdigit(output[0]))
-//                if(*output.data() != '#')
-            if(*output.data() < 256 && isdigit(output[0]))
-            {
-            myWriteFile << output << endl;
-            temp.append(output); temp += '\n';
-            }
-            }
-//           while(!myWriteFile.eof())
-           {
-//               string r, g, b;
-//getline(myReadFile, output);
-//getline(myWriteFile, g);
-//getline(myWriteFile, b);
-
-
-//          int grauwert = static_cast<double> (0.299 * r + 0.587 *(g+1) + 0.144 * (b+2))
-//           }
-
-
-
-}
-        int greyval[256] = {0};
-        if (*output.data() < 256 && isdigit(output[0]))
+        while (!myReadFile.eof())
         {
-//                int grauwert = static_cast<double> (0.299 * i + 0.587 *(i+1) + 0.144 * (i+2))
-            greyval[*output.data()] =  greyval[*output.data()] +1;
+            string red, green, blue;
+            getline(myReadFile, red);
+            if(myReadFile.eof())
+                break;
+            getline(myReadFile, green);
+            if(myReadFile.eof())
+                break;
+            getline(myReadFile, blue);
+            if(myReadFile.eof())
+                break;
+            int grauwert = static_cast<double> (0.299 * stoi(red) + 0.587 *stoi(green) + 0.144 * stoi(blue));
+            greyFile <<grauwert <<endl;
+
         }
-//            for(int i = 0; i< 256; ++i)
-//            {
-//                if(greyval[i] == 0)
-//                    cout << "Null mal gab es den Grauwert " << i << endl;
-            }
-
-
         myReadFile.close();
         myWriteFile.close();
         greyFile.close();
@@ -207,5 +181,71 @@ int main()
     } else {
         cerr << "Could not open file..." << endl;
     }
-    return 0;
-}
+
+
+    myReadFile.open("magnolieGreyscale.ppm");
+    if (myReadFile.is_open())
+    {
+        int greyval[256] = {0};
+        getline(myReadFile, output);
+        getline(myReadFile, output);
+
+        while(!myReadFile.eof())
+        {
+            getline(myReadFile, output);
+
+            if(!(isdigit(output[0]))
+                    return 0;
+
+                    histogramberechnen(greyval);
+        }
+        }
+        }
+
+
+                    else
+            {
+                    cerr <<"Konnte die Werte nicht auslesen" <<endl;
+        }
+
+
+
+                    return 0;
+        }
+
+                    void histogramberechnen(int *output)
+            {
+                    if(stoi(output) < 256)
+            {
+                    greyval[stoi(output)] =  greyval[stoi(output)] +1;
+                }
+                    else break;
+
+
+                    for(int i = 0; i< 256; ++i)
+            {
+                    if(greyval[i] == 0)
+                    cout << "Null mal gab es den Grauwert " << i << endl;
+        }
+
+        }
+
+
+                    //
+                    //            getline(myReadFile, output);
+
+                    //            cout<<output << endl;
+
+
+                    //            if(isdigit(output[0]))
+                    //                if(*output.data() != '#')
+                    //            if(*output.data() < 256 && isdigit(output[0]))
+                    //            {
+                    //            myWriteFile << output << endl;
+                    //            temp.append(output); temp += '\n';
+                    //            }
+                    //            }
+
+
+                    //}
+
