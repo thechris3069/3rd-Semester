@@ -15,7 +15,7 @@ public:
 //    }
     CaveAdventure &operator=(const CaveAdventure &ca) = delete;
     ~CaveAdventure();
-    World m_world;
+//    World m_world;
     void nextMove();
 
     Player m_player;
@@ -24,6 +24,7 @@ protected:
 //    void goldraum();
 //    void kreatur();
 private:
+        World m_world;
 };
 
 #endif // CAVEADVENTURE_H

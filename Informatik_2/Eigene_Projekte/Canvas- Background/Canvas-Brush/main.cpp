@@ -49,53 +49,52 @@ void savePicture(Background &picture)
 //int main()
 //{
 
-////    cout << &a << endl;
-////    cout << &bc << endl;
+//    cout << &a << endl;
+//    cout << &bc << endl;
 
+//    int *p  = &a;
 
-////    int *p  = &a;
+//    *(p+1) = 99;
 
-////    *(p+1) = 99;
+//    cout << bc << endl;
+//#if 0
+//    long long wo =0;
+//    cin >> wo;
+//    *((int *)wo) = 10;
+//    cout << bc << endl;
+//#endif
 
-////    cout << bc << endl;
-////#if 0
-////    long long wo =0;
-////    cin >> wo;
-////    *((int *)wo) = 10;
-////    cout << bc << endl;
-////#endif
-
-////    for( int i = 0; i <100; i++){
-////        printf("%c ", *((char *) &bc +i));
-
-
-
-////    }
-////    cout << endl;
-
-////    cout << &a << endl;
-////    cout << &bc << endl;
-
-
-////    int *p  = &a;
-
-////    *(p+1) = 99;
-
-////    cout << bc << endl;
-////#if 0
-////    long long wo =0;
-////    cin >> wo;
-////    *((int *)wo) = 10;
-////    cout << bc << endl;
-////#endif
-
-////    for( int i = 0; i <100; i++){
-////        printf("%c ", *((char *) &bc +i));
+//    for( int i = 0; i <100; i++){
+//        printf("%c ", *((char *) &bc +i));
 
 
 
-////    }
-////    cout << endl;
+//    }
+//    cout << endl;
+
+//    cout << &a << endl;
+//    cout << &bc << endl;
+
+
+//    int *p  = &a;
+
+//    *(p+1) = 99;
+
+//    cout << bc << endl;
+//#if 0
+//    long long wo =0;
+//    cin >> wo;
+//    *((int *)wo) = 10;
+//    cout << bc << endl;
+//#endif
+
+//    for( int i = 0; i <100; i++){
+//        printf("%c ", *((char *) &bc +i));
+
+
+
+//    }
+//    cout << endl;
 
 //int main()
 //{
@@ -163,41 +162,7 @@ void histogramberechnen(int *output);
                     return 0;
         }
 
-                    void histogramberechnen(int *output)
-            {
-                    if(stoi(output) < 256)
-            {
-                    greyval[stoi(output)] =  greyval[stoi(output)] +1;
-                }
-                    else break;
 
-
-                    for(int i = 0; i< 256; ++i)
-            {
-                    if(greyval[i] == 0)
-                    cout << "Null mal gab es den Grauwert " << i << endl;
-        }
-
-        }
-
-
-                    //
-                    //            getline(myReadFile, output);
-
-                    //            cout<<output << endl;
-
-
-                    //            if(isdigit(output[0]))
-                    //                if(*output.data() != '#')
-                    //            if(*output.data() < 256 && isdigit(output[0]))
-                    //            {
-                    //            myWriteFile << output << endl;
-                    //            temp.append(output); temp += '\n';
-                    //            }
-                    //            }
-
-
-                    //}
 
 //int main()
 //{
@@ -251,21 +216,13 @@ int main()
 
             cout<<output << endl;
 
-
-//            if(isdigit(output[0]))
-//                if(*output.data() != '#')
             if(*output.data() < 256 && isdigit(output[0]))
             {
             myWriteFile << output << endl;
             temp.append(output); temp += '\n';
             }
             }
-//           while(!myWriteFile.eof())
-           {
-//               string r, g, b;
-//getline(myReadFile, output);
-//getline(myWriteFile, g);
-//getline(myWriteFile, b);
+
 
 
 //          int grauwert = static_cast<double> (0.299 * r + 0.587 *(g+1) + 0.144 * (b+2))
@@ -296,3 +253,24 @@ int main()
     }
     return 0;
 }
+
+
+                    void   histogramberechnen(int *output)
+               {
+                       if(stoi(output) < 256)
+               {
+                       greyval[stoi(output)] =  greyval[stoi(output)] +1;
+                   }
+                       else break;
+
+
+                       for(int i = 0; i< 256; ++i)
+               {
+                       if(greyval[i] == 0)
+                       cout << "Null mal gab es den Grauwert " << i << endl;
+           }
+
+           }
+
+
+
